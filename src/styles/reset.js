@@ -38,7 +38,6 @@ p {
 
 main{
 
-    padding: 0 12px;
     background: linear-gradient(150deg, rgba(255,78,26,0.45702030812324934) 23%, rgba(255,255,255,1) 54%);
     display: flex;
     flex-direction: column;

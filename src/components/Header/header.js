@@ -2,11 +2,10 @@ import { styled } from "styled-components";
 
 const StyledHeader = styled.header`
 
-    display: flex;
-    justify-content: center;
+    text-align: center;
     background-color: var(--color-grey-200);
-    width: 100vw;
-    padding: 24px 0;
+    width: 100%;
+    padding: var(--padding-header);
     margin-bottom: var(--margin-header-bottom);
     color: var(--color-fixed-white);
 
@@ -25,7 +24,7 @@ const StyledHeader = styled.header`
 
     h1{
 
-        font-size: 28px;
+        font-size: var(--font-size-0);
         font-weight: 700;
 
     }

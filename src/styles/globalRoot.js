@@ -22,18 +22,25 @@ const GlobalRoot = createGlobalStyle`
         --gap-default: 16px;
         --gap-small: 8px;
 
+        --border-thickness-default: 1px;
+
         --radius-default: 6px;
         --radius-form-container: 12px;
+        --radius-btn: 4px;
 
+        --padding-header: 24px 0;
         --padding-default-mobile: 8px;
+        --padding-form-vertical: 16px 0;
         --padding-default: 16px;
+        --padding-medium: 8px;
         --padding-small: 4px;
+        --padding-submit-btn: 8px 0;
 
         --margin-main-mobile: 12px;
         --margin-main-desktop: 32px;
         --margin-header-bottom: 18px;
 
-        --font-size-0: 2rem; /* 28px */
+        --font-size-0: 1.75rem; /* 28px */
         --font-size-1: 1.625rem; /* 26px */
         --font-size-2: 1.375rem; /* 22px */
         --font-size-3: 1.125rem; /* 18px */

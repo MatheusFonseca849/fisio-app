@@ -4,6 +4,7 @@ import FormField from "../FormField/index.jsx"
 import StyledEvaluationSheet from "./evaluationSheet.js";
 import FormSubfield from "../FormSubfield/index.jsx";
 import InputContainer from "../InputContainer/index.jsx";
+import SubmitButton from "../SubmitButton/index.jsx";
 
 const EvaluationSheet = () => {
 
@@ -151,6 +152,8 @@ const EvaluationSheet = () => {
                 </FormField>
 
             </ExamContainer>
+
+            <SubmitButton>Registrar Formulário</SubmitButton>
 
         </StyledEvaluationSheet>
 

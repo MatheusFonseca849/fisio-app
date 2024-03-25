@@ -16,18 +16,19 @@ const StyledInputContainer = styled.div`
     }
 
     textarea{
-
+        width: 100%;
         resize: none;
         padding: var(--padding-small);
         border-radius: var(--radius-default);
         background-color: var(--color-grey-950);
+        border: var(--border-thickness-default) solid var(--color-grey-500);
 
     }
 
     input{
 
         padding: var(--padding-small);
-        border: 2px solid var(--color-grey-500);
+        border: var(--border-thickness-default) solid var(--color-grey-500);
         border-radius: var(--radius-default);
         background-color: var(--color-grey-950);
         width: 100%;
