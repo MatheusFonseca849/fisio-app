@@ -1,4 +1,5 @@
 import ExamContainer from "../ExamContainer/index.jsx";
+import Header from "../Header/header.js";
 import EvaluationHeaderForm from "../HeaderForm/index.jsx";
 import FormField from "../FormField/index.jsx"
 import StyledEvaluationSheet from "./evaluationSheet.js";
@@ -9,7 +10,8 @@ import SubmitButton from "../SubmitButton/index.jsx";
 const EvaluationSheet = () => {
 
     return (
-
+        <>
+        <Header><h1>Ficha de Avaliação</h1></Header>
         <StyledEvaluationSheet>
 
             <EvaluationHeaderForm />
@@ -156,6 +158,7 @@ const EvaluationSheet = () => {
             <SubmitButton>Registrar Formulário</SubmitButton>
 
         </StyledEvaluationSheet>
+        </>
 
 
     )
