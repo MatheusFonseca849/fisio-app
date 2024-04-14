@@ -41,8 +41,9 @@ main{
     background: linear-gradient(135deg, rgba(8,1,135,1) 1%, rgba(29,29,208,1) 47%, rgba(0,212,255,1) 97%);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
 
 }
 

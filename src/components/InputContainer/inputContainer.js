@@ -3,9 +3,9 @@ import { styled } from "styled-components";
 const StyledInputContainer = styled.div`
 
     display: flex;
-    flex-direction: column;
     justify-content: flex-start;
     width: fit-content;
+    gap: 8px;
 
     label{
 
