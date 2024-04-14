@@ -8,9 +8,11 @@ const InputContainer = ({
   value,
   name,
   textArea = false,
+  labelSize
 }) => {
+  {console.log(labelSize)}
   return (
-    <StyledInputContainer>
+    <StyledInputContainer $labelSize={labelSize}>
       <label htmlFor={id}>{labelText}</label>
 
       {textArea ? (
