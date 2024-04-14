@@ -11,6 +11,7 @@ const LoginForm = () => {
           labelText={"Usuário:"}
           inputType={"email"}
           placeholder={"Insira seu e-mail"}
+          labelSize={"24px"}
         />
 
         <InputContainer
@@ -18,6 +19,7 @@ const LoginForm = () => {
           labelText={"Senha:"}
           inputType={"password"}
           placeholder={"Insira sua senha"}
+          labelSize={"24px"}
         />
       </div>
 

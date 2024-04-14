@@ -6,6 +6,7 @@ const StyledLoginForm = styled.form`
     display: flex;
     flex-direction: column;
     padding: 16px;
+    min-width: 350px;
     width: fit-content;
     border-radius: var(--radius-form-container);
     
@@ -14,7 +15,6 @@ const StyledLoginForm = styled.form`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        /* align-items: center; */
         gap: 8px;
         margin-bottom: 12px;
 

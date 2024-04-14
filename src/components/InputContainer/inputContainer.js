@@ -8,8 +8,7 @@ const StyledInputContainer = styled.div`
     gap: 8px;
 
     label{
-
-        font-size: var(--font-size-3);
+        font-size: ${props => props.$labelSize};
         font-weight: var(--font-weight-1);
         color: var(--color-fixed-black);
 
@@ -32,6 +31,7 @@ const StyledInputContainer = styled.div`
         border-radius: var(--radius-default);
         background-color: var(--color-grey-950);
         width: 100%;
+        /* font-size: ; */
 
     }
     
