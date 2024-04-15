@@ -1,6 +1,6 @@
 import Header from "../Header";
 import LoginForm from "../LoginForm";
-import LoginPageFooter from "../LoginPageFooter";
+import LoginPageFooter from "../LoginRegisterFooter";
 
 const LoginPage = () => {
   return (
@@ -9,8 +9,11 @@ const LoginPage = () => {
         <h1>Login</h1>
       </Header>
       <LoginForm />
-      <span style={{marginTop: 12, marginBottom: 12}}>OU</span>
-      <LoginPageFooter/>
+      
+      <LoginPageFooter>
+      <h3>Ainda não tem uma conta?</h3>
+            <span>Cadastre-se <a href="">aqui</a></span>
+      </LoginPageFooter>
       
     </>
   );

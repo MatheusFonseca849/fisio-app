@@ -45,6 +45,12 @@ main{
     min-height: 100vh;
     min-width: 100vw;
 
+    /* div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    } */
+
 }
 
 button {

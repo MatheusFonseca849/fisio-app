@@ -6,6 +6,7 @@ const StyledInputContainer = styled.div`
     justify-content: flex-start;
     width: fit-content;
     gap: 8px;
+    width: ${props => props.inputType === "radio" ? "fit-content" : "100%"};
 
     label{
         font-size: ${props => props.$labelSize};
@@ -30,8 +31,6 @@ const StyledInputContainer = styled.div`
         border: var(--border-thickness-default) solid var(--color-grey-500);
         border-radius: var(--radius-default);
         background-color: var(--color-grey-950);
-        width: 100%;
-        /* font-size: ; */
 
     }
     

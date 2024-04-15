@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const StyledLoginFooter = styled.div`
+const StyledLoginRegisterFooter = styled.div`
   background-color: var(--color-grey-900);
   display: flex;
   flex-direction: column;
@@ -9,6 +9,7 @@ const StyledLoginFooter = styled.div`
   min-width: 320px;
   width: fit-content;
   border-radius: var(--radius-form-container);
+  margin-top: 28px;
 
   h3{
     font-size: var(--font-size-2);
@@ -25,4 +26,4 @@ const StyledLoginFooter = styled.div`
 
 `;
 
-export default StyledLoginFooter;
+export default StyledLoginRegisterFooter;
