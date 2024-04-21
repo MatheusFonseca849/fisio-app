@@ -1,6 +1,7 @@
 import EvaluationSheet from "./components/EvaluationSheet"
 import LoginPage from "./components/LoginPage"
 import RegisterPage from "./components/RegisterPage"
+import SociodemograficSheet from "./components/SociodemograficSheet"
 
 
 function App() {
@@ -9,8 +10,8 @@ function App() {
     <main>
     {/* <EvaluationSheet/> */}
     {/* <LoginPage/> */}
-    <RegisterPage/>
-    
+    {/* <RegisterPage/> */}
+    <SociodemograficSheet/>
     </main>
   )
 }

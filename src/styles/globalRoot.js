@@ -21,6 +21,7 @@ const GlobalRoot = createGlobalStyle`
 
         --gap-default: 16px;
         --gap-small: 8px;
+        --gap-radio-input: 4px;
 
         --border-thickness-default: 1px;
 
