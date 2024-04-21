@@ -6,6 +6,7 @@ import StyledEvaluationSheet from "./evaluationSheet.js";
 import FormSubfield from "../FormSubfield/index.jsx";
 import InputContainer from "../InputContainer/index.jsx";
 import SubmitButton from "../SubmitButton/index.jsx";
+import SelectInput from "../SelectInput/index.jsx";
 
 const EvaluationSheet = () => {
   return (
@@ -14,7 +15,57 @@ const EvaluationSheet = () => {
         <h1>Ficha de Avaliação</h1>
       </Header>
       <StyledEvaluationSheet>
-        <EvaluationHeaderForm />
+        <EvaluationHeaderForm>
+          <div className="headerForm_column">
+            <InputContainer
+              id={"ID"}
+              labelText={"ID"}
+              inputType={"text"}
+              placeholder={"Insira o ID"}
+            />
+            <InputContainer
+              id={"date"}
+              labelText={"Data:"}
+              inputType={"date"}
+            />
+          </div>
+
+          <div className="headerForm_column">
+            <InputContainer
+              id={"name"}
+              labelText={"Nome:"}
+              placeholder={"Insira o nome do paciente"}
+            />
+          </div>
+
+          <div className="headerForm_column">
+            <InputContainer
+              id={"poplitealAngle"}
+              labelText={"Ângulo poplíteo"}
+              inputType={"number"}
+            />
+            <span>°</span>
+
+            <SelectInput
+              id={"tat_perimetry"}
+              labelText={"Perimetria TAT"}
+              options={[
+                {
+                  text: "5cm",
+                  value: 5,
+                },
+                {
+                  text: "10cm",
+                  value: 10,
+                },
+                {
+                  text: "15cm",
+                  value: 15,
+                },
+              ]}
+            />
+          </div>
+        </EvaluationHeaderForm>
         <ExamContainer title={"Bipodal"}>
           <FormField title={"Olho Aberto"}>
             <FormSubfield title={"1"}>

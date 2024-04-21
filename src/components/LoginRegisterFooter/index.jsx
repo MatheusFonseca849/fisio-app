@@ -1,15 +1,7 @@
-import StyledLoginRegisterFooter from "./loginPageFooter.js";
+import StyledLoginRegisterFooter from "./loginRegisterFooter.js";
 
-const LoginRegisterFooter = ({children}) => {
+const LoginRegisterFooter = ({ children }) => {
+  return <StyledLoginRegisterFooter>{children}</StyledLoginRegisterFooter>;
+};
 
-    return(
-
-        <StyledLoginRegisterFooter>
-            {children}
-        </StyledLoginRegisterFooter>
-
-    )
-
-}
-
-export default LoginRegisterFooter
+export default LoginRegisterFooter;

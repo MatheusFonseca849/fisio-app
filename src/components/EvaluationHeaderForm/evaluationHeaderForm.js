@@ -6,7 +6,7 @@ const StyledEvaluationHeader = styled.div`
     background-color: var(--color-grey-900);
     display: flex;
     flex-direction: column;
-    gap: var(--gap-default);
+    gap: var(--gap-small);
     border-radius: var(--radius-default);
 
     .headerForm_column{
