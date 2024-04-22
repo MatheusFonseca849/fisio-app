@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 
 const StyledExamContainer = styled.div`
 
@@ -10,8 +10,17 @@ const StyledExamContainer = styled.div`
     border-radius: var(--radius-form-container);
 
     h2{
-
-        font-size: var(--font-size-2);
+        ${({$titleSize}) => {
+            if($titleSize){
+                return css`
+                    font-size: ${({$titleSize}) => $titleSize};
+                `
+            }else{
+                return css`
+                    font-size: var(--font-size-2);
+                `
+            }
+        }}
         font-weight: var(--font-weight-1);
         color: var(--color-grey-100);
 

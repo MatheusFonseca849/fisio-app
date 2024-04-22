@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 
 const StyledFormField = styled.div`
 
@@ -10,8 +10,17 @@ const StyledFormField = styled.div`
     padding: 8px;
 
     h3{
-
-        font-size: var(--font-size-3);
+        ${({$titleSize}) => {
+            if($titleSize){
+                return css`
+                    font-size: ${({$titleSize}) => $titleSize};
+                `
+            }else{
+                return css`
+                    font-size: var(--font-size-3);
+                `
+            }
+        }}
         font-weight: var(--font-weight-1);
 
     }

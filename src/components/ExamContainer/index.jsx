@@ -1,10 +1,10 @@
 import StyledExamContainer from "./examContainer.js";
 
-const ExamContainer = ({ title, children }) => {
+const ExamContainer = ({ title, titleSize, children }) => {
 
     return (
 
-        <StyledExamContainer>
+        <StyledExamContainer $titleSize={titleSize}>
 
             <h2>{title}</h2>
             {children}

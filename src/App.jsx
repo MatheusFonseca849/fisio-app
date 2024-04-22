@@ -1,4 +1,5 @@
 import EvaluationSheet from "./components/EvaluationSheet"
+import JointHealthPage from "./components/JointHealthSheet"
 import LoginPage from "./components/LoginPage"
 import RegisterPage from "./components/RegisterPage"
 import SociodemograficSheet from "./components/SociodemograficSheet"
@@ -11,7 +12,8 @@ function App() {
     {/* <EvaluationSheet/> */}
     {/* <LoginPage/> */}
     {/* <RegisterPage/> */}
-    <SociodemograficSheet/>
+    {/* <SociodemograficSheet/> */}
+    <JointHealthPage/>
     </main>
   )
 }

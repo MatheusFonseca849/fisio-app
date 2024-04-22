@@ -2,11 +2,12 @@ import { styled, css } from "styled-components";
 
 const StyledRadioInputContainer = styled.div`
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  /* align-items: center; */
   gap: var(--gap-default);
 
-  h2 {
+  h3 {
     ${({ $labelSize }) => {
       console.log($labelSize);
       if ($labelSize) {
@@ -25,11 +26,13 @@ const StyledRadioInputContainer = styled.div`
 
   div {
     display: flex;
+    flex-direction: row;
     gap: var(--gap-default);
 
     div {
       align-items: center;
       gap: var(--gap-radio-input);
+      flex-direction: row;
 
       input[type="radio"] {
         accent-color: var(--color-primary);
