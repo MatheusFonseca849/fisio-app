@@ -4,7 +4,6 @@ const StyledInputContainer = styled.div`
 
     display: flex;
     justify-content: flex-start;
-    width: fit-content;
     gap: 8px;
     width: ${props => props.inputType === "radio" ? "fit-content" : "100%"};
 

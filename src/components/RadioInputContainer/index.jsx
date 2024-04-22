@@ -12,11 +12,11 @@ const RadioInputContainer = ({
       $labelSize={labelSize && labelSize}
       $optionSize={optionSize && optionSize}
     >
-      <h2>{labelText}</h2>
+      <h3>{labelText}</h3>
       <div>
         {options.map((option) => (
-          <div key={option.index}>
-            <input type="radio" name={id} id={id} value={option.value} />
+          <div key={option.index} title={option.title && option.title}>
+            <input type="radio" name={id} id={`${id}_${option.value}`} value={option.value} />
             <label htmlFor={id}>{option.label}</label>
           </div>
         ))}
