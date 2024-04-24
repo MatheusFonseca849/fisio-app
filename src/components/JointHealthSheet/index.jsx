@@ -25,11 +25,13 @@ const JointHealthPage = () => {
             <InputContainer
               id={"numero_avaliacao"}
               labelText={"Nº avaliação"}
+              labelSize={defaultInputSize}
               inputType="number"
             />
             <InputContainer
               id={"data_avaliação"}
               labelText={"Data"}
+              labelSize={defaultInputSize}
               inputType={"date"}
             />
           </div>
@@ -38,6 +40,7 @@ const JointHealthPage = () => {
             <InputContainer
               id={"id_paciente"}
               labelText={"ID do paciente"}
+              labelSize={defaultInputSize}
               inputType="number"
             />
           </div>
@@ -45,6 +48,7 @@ const JointHealthPage = () => {
             <InputContainer
               id={"nome_paciente"}
               labelText={"Nome do paciente"}
+              labelSize={defaultInputSize}
             />
           </div>
         </EvaluationHeaderForm>
@@ -59,6 +63,7 @@ const JointHealthPage = () => {
               <RadioInputContainer
                 id={"cotEsquerdo_tipoEdema"}
                 labelText={"Tipo de edêma:"}
+                labelSize={defaultInputSize}
                 options={[
                   {
                     value: "nenhum",
@@ -85,6 +90,7 @@ const JointHealthPage = () => {
               <RadioInputContainer
                 id={"cotEsquerdo_pts_referenciaOssea"}
                 labelText={"Pontos referência óssea:"}
+                labelSize={defaultInputSize}
                 options={[
                   {
                     value: "visiveis",
@@ -107,6 +113,7 @@ const JointHealthPage = () => {
               <RadioInputContainer
                 id={"cotEsquerdo_palpavel"}
                 labelText={"Palpável:"}
+                labelSize={defaultInputSize}
                 options={[
                   {
                     value: "palpavel",
@@ -124,16 +131,19 @@ const JointHealthPage = () => {
               <InputContainer
                 id={"cotEsquerdo_pontuacao"}
                 labelText={"Pontuação"}
+                labelSize={defaultInputSize}
                 inputType="number"
               />
               <InputContainer
                 id={"cotEsquerdo_duracao"}
                 labelText={"Duração do edema (meses):"}
+                labelSize={defaultInputSize}
                 inputType="number"
               />
               <InputContainer
                 id={"cotEsquerdo_comentarios"}
                 labelText={"Comentários:"}
+                labelSize={defaultInputSize}
                 textArea={true}
               />
             </FormSubfield>
@@ -146,6 +156,7 @@ const JointHealthPage = () => {
               <RadioInputContainer
                 id={"cotDireito_tipoEdema"}
                 labelText={"Tipo de edêma:"}
+                labelSize={defaultInputSize}
                 options={[
                   {
                     value: "nenhum",
@@ -172,6 +183,7 @@ const JointHealthPage = () => {
               <RadioInputContainer
                 id={"cotDireito_pts_referenciaOssea"}
                 labelText={"Pontos referência óssea:"}
+                labelSize={defaultInputSize}
                 options={[
                   {
                     value: "visiveis",
@@ -194,6 +206,7 @@ const JointHealthPage = () => {
               <RadioInputContainer
                 id={"cotDireito_palpavel"}
                 labelText={"Palpável:"}
+                labelSize={defaultInputSize}
                 options={[
                   {
                     value: "palpavel",

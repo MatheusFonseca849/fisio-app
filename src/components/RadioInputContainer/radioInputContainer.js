@@ -3,8 +3,7 @@ import { styled, css } from "styled-components";
 const StyledRadioInputContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  /* align-items: center; */
+  justify-content: space-between;
   gap: var(--gap-default);
 
   h3 {

@@ -24,11 +24,11 @@ const StyledFormSubfield = styled.div`
             }
         }}
         font-weight: var(--font-weight-1);
-        padding: 16px;
+        padding: 12px;
 
     }
 
-    div{
+    section{
 
         display: flex;
         flex-direction: column;
