@@ -1,17 +1,26 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 
 const StyledInputContainer = styled.div`
 
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 8px;
     width: ${props => props.inputType === "radio" ? "fit-content" : "100%"};
 
     label{
-        font-size: ${props => props.$labelSize};
+        ${({$labelSize}) => {
+            if($labelSize){
+                return css`
+                    font-size: ${({$labelSize}) => $labelSize};
+                `
+            }else{
+                return css`
+                    font-size: var(--font-size-4);
+                `
+            }
+        }}
         font-weight: var(--font-weight-1);
         color: var(--color-fixed-black);
-
     }
 
     textarea{
@@ -21,7 +30,6 @@ const StyledInputContainer = styled.div`
         border-radius: var(--radius-default);
         background-color: var(--color-grey-950);
         border: var(--border-thickness-default) solid var(--color-grey-500);
-
     }
 
     input{

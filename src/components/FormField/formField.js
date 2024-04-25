@@ -22,9 +22,19 @@ const StyledFormField = styled.div`
             }
         }}
         font-weight: var(--font-weight-1);
-
     }
 
+    section{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    @media(min-width: 720px){
+        section{
+            flex-direction: row;
+        }
+    }
 `
 
 export default StyledFormField
