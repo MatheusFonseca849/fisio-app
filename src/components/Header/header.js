@@ -15,7 +15,6 @@ const StyledHeader = styled.header`
 
         font-size: var(--font-size-2);
         font-weight: 700;
-        width: fit-content;
         max-width: 90%;
 
     }
