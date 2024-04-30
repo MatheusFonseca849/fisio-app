@@ -4,7 +4,6 @@ import FormField from "../../components/FormField/index.jsx";
 import FormSubfield from "../../components/FormSubfield/index.jsx";
 import Header from "../../components/Header/index.jsx";
 import InputContainer from "../../components/InputContainer/index.jsx";
-import NavigationMenu from "../../components/NavigationMenu/index.jsx";
 import RadioInputContainer from "../../components/RadioInputContainer/index.jsx";
 import SubmitButton from "../../components/SubmitButton/index.jsx";
 import StyledJointHealthSheet from "./jointHealthSheet.js";
@@ -20,7 +19,6 @@ const JointHealthPage = () => {
       <Header>
         <h1>Saúde articular na Hemofilia</h1>
       </Header>
-      <NavigationMenu/>
       <StyledJointHealthSheet title="Formulário de saúde articular">
         <EvaluationHeaderForm>
           <div className="headerForm_column">
