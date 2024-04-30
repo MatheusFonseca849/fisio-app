@@ -1,6 +1,6 @@
-import RegisterForm from "../RegisterForm";
-import Header from "../Header"
-import LoginRegisterFooter from "../LoginRegisterFooter";
+import RegisterForm from "../../components/RegisterForm";
+import Header from "../../components/Header"
+import LoginRegisterFooter from "../../components/LoginRegisterFooter";
 
 const RegisterPage = () => {
 
