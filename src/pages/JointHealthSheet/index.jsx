@@ -1,11 +1,11 @@
-import EvaluationHeaderForm from "../EvaluationHeaderForm";
-import ExamContainer from "../ExamContainer";
-import FormField from "../FormField";
-import FormSubfield from "../FormSubfield";
-import Header from "../Header";
-import InputContainer from "../InputContainer";
-import RadioInputContainer from "../RadioInputContainer";
-import SubmitButton from "../SubmitButton/index.jsx";
+import EvaluationHeaderForm from "../../components/EvaluationHeaderForm/index.jsx";
+import ExamContainer from "../../components/ExamContainer/index.jsx";
+import FormField from "../../components/FormField/index.jsx";
+import FormSubfield from "../../components/FormSubfield/index.jsx";
+import Header from "../../components/Header/index.jsx";
+import InputContainer from "../../components/InputContainer/index.jsx";
+import RadioInputContainer from "../../components/RadioInputContainer/index.jsx";
+import SubmitButton from "../../components/SubmitButton/index.jsx";
 import StyledJointHealthSheet from "./jointHealthSheet.js";
 
 const JointHealthPage = () => {
@@ -1446,150 +1446,295 @@ const JointHealthPage = () => {
           </FormField>
         </ExamContainer>
 
-        <ExamContainer title={"Dor Articular"} titleSize={defaultExamContainerSize}>
-                <FormField title={"Cotovelo"} titleSize={defaultFormFieldSize}>
-                  <FormSubfield title={"Esquerdo"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                    <InputContainer 
-                    id={"cotEsquerdo_dor_articular_comentarios"}
-                    labelText={"Comentários"}
-                    placeholder={"Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"}
-                    labelSize={defaultInputSize}
-                    textArea={true}
-                    />
-                    <InputContainer
-                    id={"cotEsquerdo_dor_articular_pontuacao"}
-                    labelText={"Pontuação"}
-                    labelSize={defaultInputSize}
-                    inputType={"number"}
-                    />
-                  </FormSubfield>
+        <ExamContainer
+          title={"Dor Articular"}
+          titleSize={defaultExamContainerSize}
+        >
+          <FormField title={"Cotovelo"} titleSize={defaultFormFieldSize}>
+            <FormSubfield
+              title={"Esquerdo"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"cotEsquerdo_dor_articular_comentarios"}
+                labelText={"Comentários"}
+                placeholder={
+                  "Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"
+                }
+                labelSize={defaultInputSize}
+                textArea={true}
+              />
+              <InputContainer
+                id={"cotEsquerdo_dor_articular_pontuacao"}
+                labelText={"Pontuação"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+            </FormSubfield>
 
-                  <FormSubfield title={"Direito"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                    <InputContainer 
-                    id={"cotDireito_dor_articular_comentarios"}
-                    labelText={"Comentários"}
-                    placeholder={"Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"}
-                    labelSize={defaultInputSize}
-                    textArea={true}
-                    />
-                    <InputContainer
-                    id={"cotDireito_dor_articular_pontuacao"}
-                    labelText={"Pontuação"}
-                    labelSize={defaultInputSize}
-                    inputType={"number"}
-                    />
-                  </FormSubfield>
-                </FormField>
+            <FormSubfield
+              title={"Direito"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"cotDireito_dor_articular_comentarios"}
+                labelText={"Comentários"}
+                placeholder={
+                  "Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"
+                }
+                labelSize={defaultInputSize}
+                textArea={true}
+              />
+              <InputContainer
+                id={"cotDireito_dor_articular_pontuacao"}
+                labelText={"Pontuação"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+            </FormSubfield>
+          </FormField>
 
-                <FormField title={"Joelho"} titleSize={defaultFormFieldSize}>
-                  <FormSubfield title={"Esquerdo"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                    <InputContainer 
-                    id={"joelhoEsquerdo_dor_articular_comentarios"}
-                    labelText={"Comentários"}
-                    placeholder={"Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"}
-                    labelSize={defaultInputSize}
-                    textArea={true}
-                    />
-                    <InputContainer
-                    id={"joelhoEsquerdo_dor_articular_pontuacao"}
-                    labelText={"Pontuação"}
-                    labelSize={defaultInputSize}
-                    inputType={"number"}
-                    />
-                  </FormSubfield>
+          <FormField title={"Joelho"} titleSize={defaultFormFieldSize}>
+            <FormSubfield
+              title={"Esquerdo"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"joelhoEsquerdo_dor_articular_comentarios"}
+                labelText={"Comentários"}
+                placeholder={
+                  "Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"
+                }
+                labelSize={defaultInputSize}
+                textArea={true}
+              />
+              <InputContainer
+                id={"joelhoEsquerdo_dor_articular_pontuacao"}
+                labelText={"Pontuação"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+            </FormSubfield>
 
-                  <FormSubfield title={"Direito"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                    <InputContainer 
-                    id={"joelhoDireito_dor_articular_comentarios"}
-                    labelText={"Comentários"}
-                    placeholder={"Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"}
-                    labelSize={defaultInputSize}
-                    textArea={true}
-                    />
-                    <InputContainer
-                    id={"joelhoDireito_dor_articular_pontuacao"}
-                    labelText={"Pontuação"}
-                    labelSize={defaultInputSize}
-                    inputType={"number"}
-                    />
-                  </FormSubfield>
-                </FormField>
+            <FormSubfield
+              title={"Direito"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"joelhoDireito_dor_articular_comentarios"}
+                labelText={"Comentários"}
+                placeholder={
+                  "Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"
+                }
+                labelSize={defaultInputSize}
+                textArea={true}
+              />
+              <InputContainer
+                id={"joelhoDireito_dor_articular_pontuacao"}
+                labelText={"Pontuação"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+            </FormSubfield>
+          </FormField>
 
-                <FormField title={"Tornozelo"} titleSize={defaultFormFieldSize}>
-                  <FormSubfield title={"Esquerdo"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                    <InputContainer 
-                    id={"torEsquerdo_dor_articular_comentarios"}
-                    labelText={"Comentários"}
-                    placeholder={"Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"}
-                    labelSize={defaultInputSize}
-                    textArea={true}
-                    />
-                    <InputContainer
-                    id={"torEsquerdo_dor_articular_pontuacao"}
-                    labelText={"Pontuação"}
-                    labelSize={defaultInputSize}
-                    inputType={"number"}
-                    />
-                  </FormSubfield>
+          <FormField title={"Tornozelo"} titleSize={defaultFormFieldSize}>
+            <FormSubfield
+              title={"Esquerdo"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"torEsquerdo_dor_articular_comentarios"}
+                labelText={"Comentários"}
+                placeholder={
+                  "Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"
+                }
+                labelSize={defaultInputSize}
+                textArea={true}
+              />
+              <InputContainer
+                id={"torEsquerdo_dor_articular_pontuacao"}
+                labelText={"Pontuação"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+            </FormSubfield>
 
-                  <FormSubfield title={"Direito"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                    <InputContainer 
-                    id={"torDireito_dor_articular_comentarios"}
-                    labelText={"Comentários"}
-                    placeholder={"Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"}
-                    labelSize={defaultInputSize}
-                    textArea={true}
-                    />
-                    <InputContainer
-                    id={"torDireito_dor_articular_pontuacao"}
-                    labelText={"Pontuação"}
-                    labelSize={defaultInputSize}
-                    inputType={"number"}
-                    />
-                  </FormSubfield>
-                </FormField>
+            <FormSubfield
+              title={"Direito"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"torDireito_dor_articular_comentarios"}
+                labelText={"Comentários"}
+                placeholder={
+                  "Movimento articular ativo realizado no arco de movimento completo, com leve pressão ao final do movimento"
+                }
+                labelSize={defaultInputSize}
+                textArea={true}
+              />
+              <InputContainer
+                id={"torDireito_dor_articular_pontuacao"}
+                labelText={"Pontuação"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+            </FormSubfield>
+          </FormField>
         </ExamContainer>
 
         <ExamContainer title={"Força"} titleSize={defaultExamContainerSize}>
-                <FormField title={"Cotovelo"} titleSize={defaultFormFieldSize}>
-                    <FormSubfield title={"Esquerdo"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                        <InputContainer id={"cotEsquerdo_forca_flexao"} labelText={"Flexão"} labelSize={defaultInputSize} inputType={"number"}/>
-                        <InputContainer id={"cotEsquerdo_forca_extensao"} labelText={"Extensão"} labelSize={defaultInputSize}/>
-                        <InputContainer id={"cotEsquerdo_forca_pontuacao"} labelText={"Pontuação"} labelSize={defaultInputSize}/>
-                    </FormSubfield>
-                    <FormSubfield title={"Direito"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                        <InputContainer id={"cotDireito_forca_flexao"} labelText={"Flexão"} labelSize={defaultInputSize} inputType={"number"}/>
-                        <InputContainer id={"cotDireito_forca_extensao"} labelText={"Extensão"} labelSize={defaultInputSize}/>
-                        <InputContainer id={"cotDireito_forca_pontuacao"} labelText={"Pontuação"} labelSize={defaultInputSize}/>
-                    </FormSubfield>
-                </FormField>
+          <FormField title={"Cotovelo"} titleSize={defaultFormFieldSize}>
+            <FormSubfield
+              title={"Esquerdo"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"cotEsquerdo_forca_flexao"}
+                labelText={"Flexão"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+              <InputContainer
+                id={"cotEsquerdo_forca_extensao"}
+                labelText={"Extensão"}
+                labelSize={defaultInputSize}
+              />
+              <InputContainer
+                id={"cotEsquerdo_forca_pontuacao"}
+                labelText={"Pontuação"}
+                labelSize={defaultInputSize}
+              />
+            </FormSubfield>
+            <FormSubfield
+              title={"Direito"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"cotDireito_forca_flexao"}
+                labelText={"Flexão"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+              <InputContainer
+                id={"cotDireito_forca_extensao"}
+                labelText={"Extensão"}
+                labelSize={defaultInputSize}
+              />
+              <InputContainer
+                id={"cotDireito_forca_pontuacao"}
+                labelText={"Pontuação"}
+                labelSize={defaultInputSize}
+              />
+            </FormSubfield>
+          </FormField>
 
-                <FormField title={"Joelho"} titleSize={defaultFormFieldSize}>
-                    <FormSubfield title={"Esquerdo"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                        <InputContainer id={"joelhoEsquerdo_forca_flexao"} labelText={"Flexão"} labelSize={defaultInputSize} inputType={"number"}/>
-                        <InputContainer id={"joelhoEsquerdo_forca_extensao"} labelText={"Extensão"} labelSize={defaultInputSize}/>
-                        <InputContainer id={"joelhoEsquerdo_forca_pontuacao"} labelText={"Pontuação"} labelSize={defaultInputSize}/>
-                    </FormSubfield>
-                    <FormSubfield title={"Direito"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                        <InputContainer id={"joelhoDireito_forca_flexao"} labelText={"Flexão"} labelSize={defaultInputSize} inputType={"number"}/>
-                        <InputContainer id={"joelhoDireito_forca_extensao"} labelText={"Extensão"} labelSize={defaultInputSize}/>
-                        <InputContainer id={"joelhoDireito_forca_pontuacao"} labelText={"Pontuação"} labelSize={defaultInputSize}/>
-                    </FormSubfield>
-                </FormField>
+          <FormField title={"Joelho"} titleSize={defaultFormFieldSize}>
+            <FormSubfield
+              title={"Esquerdo"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"joelhoEsquerdo_forca_flexao"}
+                labelText={"Flexão"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+              <InputContainer
+                id={"joelhoEsquerdo_forca_extensao"}
+                labelText={"Extensão"}
+                labelSize={defaultInputSize}
+              />
+              <InputContainer
+                id={"joelhoEsquerdo_forca_pontuacao"}
+                labelText={"Pontuação"}
+                labelSize={defaultInputSize}
+              />
+            </FormSubfield>
+            <FormSubfield
+              title={"Direito"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"joelhoDireito_forca_flexao"}
+                labelText={"Flexão"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+              <InputContainer
+                id={"joelhoDireito_forca_extensao"}
+                labelText={"Extensão"}
+                labelSize={defaultInputSize}
+              />
+              <InputContainer
+                id={"joelhoDireito_forca_pontuacao"}
+                labelText={"Pontuação"}
+                labelSize={defaultInputSize}
+              />
+            </FormSubfield>
+          </FormField>
 
-                <FormField title={"Tornozelo"} titleSize={defaultFormFieldSize}>
-                  <FormSubfield title={"Esquerdo"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                        <InputContainer id={"torEsquerdo_forca_elevacoes"} labelText={"Nº de elevações do calcanhar"} labelSize={defaultInputSize} inputType={"number"}/>
-                        <InputContainer id={"torEsquerdo_forca_flexaoPlantar"} labelText={"Flexão Plantar"} labelSize={defaultInputSize} inputType={"number"}/>
-                        <InputContainer id={"torEsquerdo_forca_dorsiflexao"} labelText={"Dorsiflexão"} labelSize={defaultInputSize} inputType={"number"}/>
-                  </FormSubfield>
+          <FormField title={"Tornozelo"} titleSize={defaultFormFieldSize}>
+            <FormSubfield
+              title={"Esquerdo"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"torEsquerdo_forca_elevacoes"}
+                labelText={"Nº de elevações do calcanhar"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+              <InputContainer
+                id={"torEsquerdo_forca_flexaoPlantar"}
+                labelText={"Flexão Plantar"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+              <InputContainer
+                id={"torEsquerdo_forca_dorsiflexao"}
+                labelText={"Dorsiflexão"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+            </FormSubfield>
 
-                  <FormSubfield title={"Direito"} titleSize={defaultFormSubfieldSize} orientation={"column"}>
-                        <InputContainer id={"torDireito_forca_elevacoes"} labelText={"Nº de elevações do calcanhar"} labelSize={defaultInputSize} inputType={"number"}/>
-                        <InputContainer id={"torDireito_forca_flexaoPlantar"} labelText={"Flexão Plantar"} labelSize={defaultInputSize} inputType={"number"}/>
-                        <InputContainer id={"torDireito_forca_dorsiflexao"} labelText={"Dorsiflexão"} labelSize={defaultInputSize} inputType={"number"}/>
-                  </FormSubfield>
-                </FormField>
+            <FormSubfield
+              title={"Direito"}
+              titleSize={defaultFormSubfieldSize}
+              orientation={"column"}
+            >
+              <InputContainer
+                id={"torDireito_forca_elevacoes"}
+                labelText={"Nº de elevações do calcanhar"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+              <InputContainer
+                id={"torDireito_forca_flexaoPlantar"}
+                labelText={"Flexão Plantar"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+              <InputContainer
+                id={"torDireito_forca_dorsiflexao"}
+                labelText={"Dorsiflexão"}
+                labelSize={defaultInputSize}
+                inputType={"number"}
+              />
+            </FormSubfield>
+          </FormField>
         </ExamContainer>
         <SubmitButton>Enviar Formulário</SubmitButton>
       </StyledJointHealthSheet>

@@ -1,12 +1,12 @@
-import ExamContainer from "../ExamContainer/index.jsx";
-import Header from "../Header/header.js";
-import EvaluationHeaderForm from "../EvaluationHeaderForm/index.jsx";
-import FormField from "../FormField/index.jsx";
+import ExamContainer from "../../components/ExamContainer/index.jsx";
+import Header from "../../components/Header/header.js";
+import EvaluationHeaderForm from "../../components/EvaluationHeaderForm/index.jsx";
+import FormField from "../../components/FormField/index.jsx";
 import StyledEvaluationSheet from "./evaluationSheet.js";
-import FormSubfield from "../FormSubfield/index.jsx";
-import InputContainer from "../InputContainer/index.jsx";
-import SubmitButton from "../SubmitButton/index.jsx";
-import SelectInput from "../SelectInput/index.jsx";
+import FormSubfield from "../../components/FormSubfield/index.jsx";
+import InputContainer from "../../components/InputContainer/index.jsx";
+import SubmitButton from "../../components/SubmitButton/index.jsx";
+import SelectInput from "../../components/SelectInput/index.jsx";
 
 const EvaluationSheet = () => {
   return (
