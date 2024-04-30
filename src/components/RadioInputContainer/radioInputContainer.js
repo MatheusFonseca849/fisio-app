@@ -8,7 +8,7 @@ const StyledRadioInputContainer = styled.div`
 
   h3 {
     ${({ $labelSize }) => {
-      console.log($labelSize);
+      // console.log($labelSize);
       if ($labelSize) {
         return css`
           font-size: ${(props) => props.$labelSize};
@@ -39,7 +39,7 @@ const StyledRadioInputContainer = styled.div`
       }
       label {
         ${({ $optionSize }) => {
-          console.log($optionSize);
+          // console.log($optionSize);
           if ($optionSize) {
             return css`
               font-size: ${({ $optionSize }) => $optionSize};

@@ -19,9 +19,12 @@ const GlobalRoot = createGlobalStyle`
         --color-grey-100: #202020;
         --color-fixed-black: #1C1C1C;
 
+        --default-max-width: 768px;
+
         --gap-default: 16px;
         --gap-small: 8px;
         --gap-radio-input: 4px;
+        --gap-nav-menu: 28px;
 
         --border-thickness-default: 1px;
 
@@ -29,7 +32,7 @@ const GlobalRoot = createGlobalStyle`
         --radius-form-container: 12px;
         --radius-btn: 4px;
 
-        --padding-header: 24px 0;
+        --padding-header: 24px 12px;
         --padding-default-mobile: 8px;
         --padding-form-vertical: 16px 0;
         --padding-default: 16px;
