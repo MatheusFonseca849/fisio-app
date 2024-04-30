@@ -1,5 +1,5 @@
 import ExamContainer from "../../components/ExamContainer/index.jsx";
-import Header from "../../components/Header/header.js";
+import Header from "../../components/Header";
 import EvaluationHeaderForm from "../../components/EvaluationHeaderForm/index.jsx";
 import FormField from "../../components/FormField/index.jsx";
 import StyledEvaluationSheet from "./evaluationSheet.js";
