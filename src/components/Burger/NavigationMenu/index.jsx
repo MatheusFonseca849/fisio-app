@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import StyledNavMenu from "./navigationMenu"
 import { StyledLink } from "./navigationMenu";
 
@@ -13,7 +12,7 @@ const NavigationMenu = ({open}) => {
                 <StyledLink to={'/sociodemografico'}>Formulário sociodemográfico</StyledLink>
             </li>
             <li>
-                <StyledLink to={'saudeArticular'}>Formulário de saúde articular</StyledLink>
+                <StyledLink to={'/saudeArticular'}>Formulário de saúde articular</StyledLink>
             </li>
         </StyledNavMenu>
     )
