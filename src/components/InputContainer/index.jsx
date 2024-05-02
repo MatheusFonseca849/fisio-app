@@ -18,7 +18,7 @@ const InputContainer = ({
         <textarea
           id={id}
           placeholder={placeholder}
-          cols="40"
+          cols="30"
           rows="4"
         ></textarea>
       ) : (

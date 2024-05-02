@@ -1,11 +1,10 @@
-import EvaluationHeaderForm from "../EvaluationHeaderForm";
-import ExamContainer from "../ExamContainer/index.jsx";
-import FormSubfield from "../FormSubfield/index.jsx";
-import Header from "../Header";
-import InputContainer from "../InputContainer";
-import RadioInputContainer from "../RadioInputContainer/index.jsx";
-import SelectInput from "../SelectInput/index.jsx";
-import SubmitButton from "../SubmitButton/index.jsx";
+import EvaluationHeaderForm from "../../components/EvaluationHeaderForm";
+import ExamContainer from "../../components/ExamContainer";
+import Header from "../../components/Header";
+import InputContainer from "../../components/InputContainer";
+import RadioInputContainer from "../../components/RadioInputContainer";
+import SelectInput from "../../components/SelectInput";
+import SubmitButton from "../../components/SubmitButton";
 import StyledSocioForm from "./sociodemograficSheet.js";
 
 const SociodemograficSheet = () => {

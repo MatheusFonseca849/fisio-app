@@ -30,7 +30,7 @@ const StyledFormField = styled.div`
         gap: 12px;
     }
 
-    @media(min-width: 720px){
+    @media(min-width: 768px){
         section{
             flex-direction: row;
         }
