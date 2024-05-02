@@ -6,7 +6,7 @@ const StyledBurguer = styled.div`
   z-index: 20;
   display: none;
   position: absolute;
-  right: 12px;
+  right: 18px;
 
   &:hover{
     cursor: pointer;

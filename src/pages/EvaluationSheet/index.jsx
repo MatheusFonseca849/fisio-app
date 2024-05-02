@@ -7,14 +7,25 @@ import FormSubfield from "../../components/FormSubfield/index.jsx";
 import InputContainer from "../../components/InputContainer/index.jsx";
 import SubmitButton from "../../components/SubmitButton/index.jsx";
 import SelectInput from "../../components/SelectInput/index.jsx";
+import { useContext } from "react";
+import { FormContext } from "../../providers/FormContext.jsx";
+import RadioInputContainer from "../../components/RadioInputContainer/index.jsx";
+import TextAreaInput from "../../components/TextAreaInput/index.jsx";
 
 const EvaluationSheet = () => {
+  const { evaluationFormRegister } = useContext(FormContext);
+  const { register, handleSubmit } = evaluationFormRegister;
+  console.log(register, handleSubmit);
+
+  const submitForm = (data) => {
+    console.log(data);
+  };
   return (
     <>
       <Header>
         <h1>Ficha de Avaliação</h1>
       </Header>
-      <StyledEvaluationSheet>
+      <StyledEvaluationSheet onSubmit={handleSubmit(submitForm)}>
         <EvaluationHeaderForm>
           <div className="headerForm_column">
             <InputContainer
@@ -22,11 +33,13 @@ const EvaluationSheet = () => {
               labelText={"ID"}
               inputType={"text"}
               placeholder={"Insira o ID"}
+              {...register("ID_paciente")}
             />
             <InputContainer
               id={"date"}
               labelText={"Data:"}
               inputType={"date"}
+              {...register("data_avaliacao")}
             />
           </div>
 
@@ -35,6 +48,7 @@ const EvaluationSheet = () => {
               id={"name"}
               labelText={"Nome:"}
               placeholder={"Insira o nome do paciente"}
+              {...register("nome_paciente")}
             />
           </div>
 
@@ -43,12 +57,14 @@ const EvaluationSheet = () => {
               id={"poplitealAngle"}
               labelText={"Ângulo poplíteo"}
               inputType={"number"}
+              {...register("angulo_popliteo")}
             />
             <span>°</span>
 
             <SelectInput
               id={"tat_perimetry"}
               labelText={"Perimetria TAT"}
+              {...register("perimetria_tat")}
               options={[
                 {
                   text: "5cm",
@@ -73,26 +89,29 @@ const EvaluationSheet = () => {
                 id={"bipodal_eyesOpen_time_1"}
                 labelText={"Tempo:"}
                 inputType={"time"}
+                {...register("bipodal_aberto_tempo1")}
               />
-              <InputContainer
+              <TextAreaInput
                 id={"bipodal_eyesOpen_coments_1"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes..."}
-                textArea={true}
+                {...register("bipodal_aberto_comentario1")}
               />
             </FormSubfield>
 
             <FormSubfield title={"2"}>
               <InputContainer
-                id={"bipodal_eyesOpen_time_1"}
+                id={"bipodal_eyesOpen_time_2"}
                 labelText={"Tempo"}
                 inputType={"time"}
+                {...register("bipodal_aberto_tempo2")}
               />
-              <InputContainer
+              <TextAreaInput
                 id={"bipodal_eyesOpen_coments_2"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes..."}
-                textArea={true}
+                {...register("bipodal_aberto_comentario2")}
+                
               />
             </FormSubfield>
           </FormField>
@@ -103,12 +122,13 @@ const EvaluationSheet = () => {
                 id={"bipodal_eyesClosed_time_1"}
                 labelText={"Tempo:"}
                 inputType={"time"}
+                {...register("bipodal_fechado_tempo1")}
               />
-              <InputContainer
+              <TextAreaInput
                 id={"bipodal_eyesClosed_coments_1"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes"}
-                textArea={true}
+                {...register("bipodal_fechado_comentario1")}
               />
             </FormSubfield>
 
@@ -117,34 +137,40 @@ const EvaluationSheet = () => {
                 id={"bipodal_eyesClosed_time_2"}
                 labelText={"Tempo"}
                 inputType={"time"}
+                {...register("bipodal_fechado_tempo2")}
               />
-              <InputContainer
-                id={"bipodal_eyesClosed_coments_2"}
+              <TextAreaInput
+                id={"bipodal_fechado_comentario2"}
                 labelText={"Comentários"}
                 placeholder={"Insira os comentários pertinentes"}
-                textArea={true}
+                {...register("bipodal_fechado_comentario2")}
               />
             </FormSubfield>
           </FormField>
         </ExamContainer>
 
         <ExamContainer title={"Unipodal"}>
-          <FormField title={"Membro de Preferência:"}>
-            <InputContainer
-              id={"preferedMember_L"}
-              labelText={"Esq."}
-              inputType={"radio"}
-              name={"preferedMember"}
-              value={"L"}
+          <FormSubfield>
+            
+            <RadioInputContainer
+              id={"membro_preferencia"}
+              labelText={"Membro de preferência"}
+              labelSize={"16px"}
+              options={[
+                {
+                  title: 'esquerdo',
+                  value: 'esquerdo',
+                  label: 'Esq'
+                },
+                {
+                  title: 'Direito',
+                  value: 'direito',
+                  label: 'Dir'
+                }
+              ]}
+              {...register("membro_preferencia")}
             />
-            <InputContainer
-              id={"preferedMember_R"}
-              labelText={"Dir."}
-              inputType={"radio"}
-              name={"preferedMember"}
-              value={"R"}
-            />
-          </FormField>
+          </FormSubfield>
 
           <FormField>
             <FormSubfield title={"1"}>
@@ -152,12 +178,14 @@ const EvaluationSheet = () => {
                 id={"unipodal_time_1"}
                 labelText={"Tempo:"}
                 inputType={"time"}
+                {...register("unipodal_tempo1")}
               />
-              <InputContainer
+              <TextAreaInput
                 id={"unipodal_coments_1"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes"}
-                textArea={true}
+               
+                {...register("unipodal_comentario1")}
               />
             </FormSubfield>
 
@@ -166,12 +194,14 @@ const EvaluationSheet = () => {
                 id={"unipodal_time_2"}
                 labelText={"Tempo:"}
                 inputType={"time"}
+                {...register("angulo_popliteo")}
               />
-              <InputContainer
+              <TextAreaInput
+                {...register("angulo_popliteo")}
                 id={"unipodal_coments_2"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes"}
-                textArea={true}
+               
               />
             </FormSubfield>
           </FormField>
@@ -180,16 +210,19 @@ const EvaluationSheet = () => {
         <ExamContainer title={"Alcance Funcional - Membro Superior"}>
           <FormField title={"Direito"}>
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"upperMember_right_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"upperMember_right_2"}
               labelText={"2"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"upperMember_right_3"}
               labelText={"3"}
               inputType={"number"}
@@ -198,16 +231,19 @@ const EvaluationSheet = () => {
 
           <FormField title={"Esquerdo"}>
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"upperMember_left_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"upperMember_left_2"}
               labelText={"2"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"upperMember_left_3"}
               labelText={"3"}
               inputType={"number"}
@@ -218,16 +254,19 @@ const EvaluationSheet = () => {
         <ExamContainer title={"Mobilidade de Tornozelo"}>
           <FormField title={"Direito"}>
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"ankleMobility_right_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"ankleMobility_right_2"}
               labelText={"2"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"ankleMobility_right_3"}
               labelText={"3"}
               inputType={"number"}
@@ -236,16 +275,19 @@ const EvaluationSheet = () => {
 
           <FormField title={"Esquerdo"}>
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"ankleMobility_left_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"ankleMobility_left_2"}
               labelText={"2"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"ankleMobility_left_3"}
               labelText={"3"}
               inputType={"number"}
@@ -256,16 +298,19 @@ const EvaluationSheet = () => {
         <ExamContainer title={"Força Muscular"}>
           <FormField title={"MI Direito"}>
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"muscleStrenght_right_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"muscleStrenght_right_2"}
               labelText={"2"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"muscleStrenght_right_3"}
               labelText={"3"}
               inputType={"number"}
@@ -274,16 +319,19 @@ const EvaluationSheet = () => {
 
           <FormField title={"MI Esquerdo"}>
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"muscleStrenght_left_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"muscleStrenght_left_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"muscleStrenght_left_1"}
               labelText={"1"}
               inputType={"number"}
@@ -294,16 +342,19 @@ const EvaluationSheet = () => {
         <ExamContainer title={"Sentar e Levantar"}>
           <FormField title={"5 repetições seg."}>
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"upDown_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"upDown_2"}
               labelText={"2"}
               inputType={"number"}
             />
             <InputContainer
+              {...register("angulo_popliteo")}
               id={"upDown_3"}
               labelText={"3"}
               inputType={"number"}

@@ -1,3 +1,4 @@
+import { forwardRef, useState } from "react";
 import StyledInputContainer from "./inputContainer.js";
 
 const InputContainer = ({
@@ -5,34 +6,45 @@ const InputContainer = ({
   labelText,
   inputType = "text",
   placeholder,
-  value,
   name,
   textArea = false,
   labelSize,
-}) => {
+  ...rest
+}, ref) => {
+
+  const [ text, setText ] = useState('')
   return (
     <StyledInputContainer $labelSize={labelSize}>
       <label htmlFor={id}>{labelText}</label>
 
       {textArea ? (
+        
         <textarea
           id={id}
           placeholder={placeholder}
-          cols="30"
+          cols="25"
           rows="4"
-        ></textarea>
+          value={text}
+          onInput={e => setText(e.target.value)}
+          onKeyDown={e => console.log(e.target.value)}
+          ref={ref}
+          {...rest}
+        />
       ) : (
         <input
           type={inputType}
           id={id}
           placeholder={placeholder && placeholder}
           name={name && name}
-          value={value && value}
-          required
+          onChange={(e) => console.log(e.target.value)}
+          ref={ref}
+          {...rest}
+          // value={value && value}
+          // required
         />
       )}
     </StyledInputContainer>
   );
 };
 
-export default InputContainer;
+export default forwardRef(InputContainer);

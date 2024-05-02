@@ -1,10 +1,18 @@
+import { forwardRef } from "react";
 import StyledSelectInput from "./selectInput.js";
 
-const SelectInput = ({ id, labelText, options, labelSize }) => {
+const SelectInput = ({ id, labelText, options, labelSize, ...rest }, ref) => {
   return (
-    <StyledSelectInput $labelSize={labelSize && labelSize}>
+    <StyledSelectInput key={id} $labelSize={labelSize && labelSize}>
       <label htmlFor={id}>{labelText}</label>
-      <select name={id} id={id}>
+      <select
+        key={id}
+        name={id}
+        id={id}
+        ref={ref}
+        {...rest}
+        onChange={(e) => console.log(e.target.value)}
+      >
         {options.map((option) => (
           <option key={option.index} value={option.value}>
             {option.text}
@@ -15,4 +23,4 @@ const SelectInput = ({ id, labelText, options, labelSize }) => {
   );
 };
 
-export default SelectInput;
+export default forwardRef(SelectInput);
