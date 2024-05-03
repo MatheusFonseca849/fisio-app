@@ -184,7 +184,6 @@ const EvaluationSheet = () => {
                 id={"unipodal_coments_1"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes"}
-               
                 {...register("unipodal_comentario1")}
               />
             </FormSubfield>
@@ -194,13 +193,13 @@ const EvaluationSheet = () => {
                 id={"unipodal_time_2"}
                 labelText={"Tempo:"}
                 inputType={"time"}
-                {...register("angulo_popliteo")}
+                {...register("unipodal_tempo2")}
               />
               <TextAreaInput
-                {...register("angulo_popliteo")}
                 id={"unipodal_coments_2"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes"}
+                {...register("unipodal_comentario2")}
                
               />
             </FormSubfield>
@@ -210,43 +209,43 @@ const EvaluationSheet = () => {
         <ExamContainer title={"Alcance Funcional - Membro Superior"}>
           <FormField title={"Direito"}>
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"upperMember_right_1"}
               labelText={"1"}
               inputType={"number"}
+              {...register("af_sup_dir")}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"upperMember_right_2"}
               labelText={"2"}
               inputType={"number"}
+              {...register("af_sup_dir")}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"upperMember_right_3"}
               labelText={"3"}
               inputType={"number"}
+              {...register("af_sup_dir")}
             />
           </FormField>
 
           <FormField title={"Esquerdo"}>
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"upperMember_left_1"}
               labelText={"1"}
               inputType={"number"}
+              {...register("af_sup_esq")}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"upperMember_left_2"}
               labelText={"2"}
               inputType={"number"}
+              {...register("af_sup_esq")}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"upperMember_left_3"}
               labelText={"3"}
               inputType={"number"}
+              {...register("af_sup_esq")}
             />
           </FormField>
         </ExamContainer>
@@ -254,43 +253,43 @@ const EvaluationSheet = () => {
         <ExamContainer title={"Mobilidade de Tornozelo"}>
           <FormField title={"Direito"}>
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"ankleMobility_right_1"}
               labelText={"1"}
               inputType={"number"}
+              {...register("mob_tor_dir1")}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"ankleMobility_right_2"}
               labelText={"2"}
               inputType={"number"}
-            />
+              {...register("mob_tor_dir2")}
+              />
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"ankleMobility_right_3"}
               labelText={"3"}
               inputType={"number"}
+              {...register("mob_tor_dir3")}
             />
           </FormField>
 
           <FormField title={"Esquerdo"}>
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"ankleMobility_left_1"}
               labelText={"1"}
               inputType={"number"}
+              {...register("mob_tor_esq1")}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"ankleMobility_left_2"}
               labelText={"2"}
               inputType={"number"}
+              {...register("mob_tor_esq2")}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
               id={"ankleMobility_left_3"}
               labelText={"3"}
               inputType={"number"}
+              {...register("mob_tor_esq3")}
             />
           </FormField>
         </ExamContainer>
@@ -298,19 +297,19 @@ const EvaluationSheet = () => {
         <ExamContainer title={"Força Muscular"}>
           <FormField title={"MI Direito"}>
             <InputContainer
-              {...register("angulo_popliteo")}
+              {...register("for_musc_dir1")}
               id={"muscleStrenght_right_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
+              {...register("for_musc_dir2")}
               id={"muscleStrenght_right_2"}
               labelText={"2"}
               inputType={"number"}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
+              {...register("for_musc_dir3")}
               id={"muscleStrenght_right_3"}
               labelText={"3"}
               inputType={"number"}
@@ -319,19 +318,19 @@ const EvaluationSheet = () => {
 
           <FormField title={"MI Esquerdo"}>
             <InputContainer
-              {...register("angulo_popliteo")}
+              {...register("for_musc_esq1")}
               id={"muscleStrenght_left_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
+              {...register("for_musc_esq2")}
               id={"muscleStrenght_left_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
+              {...register("for_musc_esq3")}
               id={"muscleStrenght_left_1"}
               labelText={"1"}
               inputType={"number"}
@@ -342,19 +341,19 @@ const EvaluationSheet = () => {
         <ExamContainer title={"Sentar e Levantar"}>
           <FormField title={"5 repetições seg."}>
             <InputContainer
-              {...register("angulo_popliteo")}
+              {...register("sentar_levantar1")}
               id={"upDown_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
+              {...register("sentar_levantar2")}
               id={"upDown_2"}
               labelText={"2"}
               inputType={"number"}
             />
             <InputContainer
-              {...register("angulo_popliteo")}
+              {...register("sentar_levantar3")}
               id={"upDown_3"}
               labelText={"3"}
               inputType={"number"}
