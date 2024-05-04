@@ -1,10 +1,18 @@
 import InputContainer from "../InputContainer";
 import SubmitButton from "../SubmitButton/index.jsx";
 import StyledLoginForm from "./loginForm.js";
+import { useForm } from "react-hook-form";
 
 const LoginForm = () => {
+
+  const {register, handleSubmit} = useForm()
+
+  const loginUser = (data) => {
+    console.log(data)
+  }
+
   return (
-    <StyledLoginForm>
+    <StyledLoginForm onSubmit={handleSubmit(loginUser)}>
       <div>
         <InputContainer
           id={"user"}
@@ -12,6 +20,7 @@ const LoginForm = () => {
           inputType={"email"}
           placeholder={"Insira seu e-mail"}
           labelSize={"24px"}
+          {...register("login")}
         />
 
         <InputContainer
@@ -20,6 +29,7 @@ const LoginForm = () => {
           inputType={"password"}
           placeholder={"Insira sua senha"}
           labelSize={"24px"}
+          {...register("password")}
         />
       </div>
 

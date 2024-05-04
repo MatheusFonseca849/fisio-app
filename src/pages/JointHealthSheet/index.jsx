@@ -1,5 +1,8 @@
-import { useContext } from "react";
-import { FormContext } from "../../providers/FormContext.jsx";
+import { useForm } from "react-hook-form";
+
+import StyledJointHealthSheet from "./jointHealthSheet.js";
+
+
 import EvaluationHeaderForm from "../../components/EvaluationHeaderForm/index.jsx";
 import ExamContainer from "../../components/ExamContainer/index.jsx";
 import FormField from "../../components/FormField/index.jsx";
@@ -8,8 +11,8 @@ import Header from "../../components/Header/index.jsx";
 import InputContainer from "../../components/InputContainer/index.jsx";
 import RadioInputContainer from "../../components/RadioInputContainer/index.jsx";
 import SubmitButton from "../../components/SubmitButton/index.jsx";
-import StyledJointHealthSheet from "./jointHealthSheet.js";
 import TextAreaInput from "../../components/TextAreaInput/index.jsx";
+
 
 const JointHealthPage = () => {
   const defaultExamContainerSize = "1.5rem";
@@ -17,8 +20,7 @@ const JointHealthPage = () => {
   const defaultFormSubfieldSize = "1.25rem";
   const defaultInputSize = "1rem";
 
-  const { jointHealthRegister } = useContext(FormContext);
-  const { register, handleSubmit } = jointHealthRegister;
+  const { register, handleSubmit } = useForm()
 
   const submitForm = (data) => {
     console.log(data);

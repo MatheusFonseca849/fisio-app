@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { FormContext } from "../../providers/FormContext.jsx";
+
+import { useForm } from "react-hook-form";
 import EvaluationHeaderForm from "../../components/EvaluationHeaderForm";
 import ExamContainer from "../../components/ExamContainer";
 import Header from "../../components/Header";
@@ -13,8 +13,7 @@ const SociodemograficSheet = () => {
   const defaultLabelSize = "16px";
   const defaultOptionSize = "16px";
 
-  const { socioFormRegister } = useContext(FormContext);
-  const { register, handleSubmit } = socioFormRegister;
+  const { register, handleSubmit } = useForm()
 
   const submitForm = (data) => {
     console.log(data);

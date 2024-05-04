@@ -7,15 +7,14 @@ import FormSubfield from "../../components/FormSubfield/index.jsx";
 import InputContainer from "../../components/InputContainer/index.jsx";
 import SubmitButton from "../../components/SubmitButton/index.jsx";
 import SelectInput from "../../components/SelectInput/index.jsx";
-import { useContext } from "react";
-import { FormContext } from "../../providers/FormContext.jsx";
+
 import RadioInputContainer from "../../components/RadioInputContainer/index.jsx";
 import TextAreaInput from "../../components/TextAreaInput/index.jsx";
+import { useForm } from "react-hook-form";
 
 const EvaluationSheet = () => {
-  const { evaluationFormRegister } = useContext(FormContext);
-  const { register, handleSubmit } = evaluationFormRegister;
-  console.log(register, handleSubmit);
+ 
+  const { register, handleSubmit } = useForm()
 
   const submitForm = (data) => {
     console.log(data);
