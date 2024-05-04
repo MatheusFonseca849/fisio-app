@@ -9,8 +9,12 @@ export const UserProvider = ({children}) => {
         console.log(data)
       }
 
+    const registerUser = (data) => {
+        console.log(data)
+    }
+
     return(
-        <UserContext.Provider value={{loginUser}}>
+        <UserContext.Provider value={{loginUser, registerUser}}>
             {children}
         </UserContext.Provider>
     )
