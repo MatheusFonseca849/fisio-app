@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 
 const StyledInputContainer = styled.div`
 
@@ -6,6 +6,22 @@ const StyledInputContainer = styled.div`
     justify-content: space-between;
     gap: 8px;
     width: ${props => props.inputType === "radio" ? "fit-content" : "100%"};
+
+    label {
+    ${({ $labelSize }) => {
+      if ($labelSize) {
+        return css`
+          font-size: ${({ $labelSize }) => $labelSize};
+        `;
+      } else {
+        return css`
+          font-size: var(--font-size-4);
+        `;
+      }
+    }}
+    font-weight: var(--font-weight-1);
+    color: var(--color-fixed-black);
+  }
 
     input{
 
