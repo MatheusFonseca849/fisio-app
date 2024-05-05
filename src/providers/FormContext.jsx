@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import * as yup from "yup"
 
 
 export const FormContext = createContext({})
@@ -9,10 +10,8 @@ export const FormProvider = ({ children }) => {
         console.log("Funcionou")
     }
 
-    
-
     return(
-        <FormContext.Provider value={{contextWorks}}>
+        <FormContext.Provider value={{ contextWorks }}>
             {children}
         </FormContext.Provider>
     )

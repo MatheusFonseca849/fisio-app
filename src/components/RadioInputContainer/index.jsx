@@ -8,6 +8,7 @@ const RadioInputContainer = ({
   labelSize,
   optionSize,
   options,
+  errorMessage,
   ...rest
 }, ref) => {
   return (
@@ -32,6 +33,7 @@ const RadioInputContainer = ({
           </div>
         ))}
       </div>
+      <span>{errorMessage}</span>
     </StyledRadioInputContainer>
   );
 };

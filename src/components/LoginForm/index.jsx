@@ -1,15 +1,21 @@
+import { useContext } from "react";
 import InputContainer from "../InputContainer";
 import SubmitButton from "../SubmitButton/index.jsx";
 import StyledLoginForm from "./loginForm.js";
 import { useForm } from "react-hook-form";
+import { UserContext } from "../../providers/UserContext.jsx";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { userLoginSchema } from "../../schemas/userSchemas.js";
+
+
 
 const LoginForm = () => {
 
-  const {register, handleSubmit} = useForm()
+  const {register, handleSubmit} = useForm({
+    resolver: yupResolver(userLoginSchema)
+  })
 
-  const loginUser = (data) => {
-    console.log(data)
-  }
+  const { loginUser } = useContext(UserContext)
 
   return (
     <StyledLoginForm onSubmit={handleSubmit(loginUser)}>
