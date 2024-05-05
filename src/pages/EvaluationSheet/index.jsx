@@ -7,14 +7,17 @@ import FormSubfield from "../../components/FormSubfield/index.jsx";
 import InputContainer from "../../components/InputContainer/index.jsx";
 import SubmitButton from "../../components/SubmitButton/index.jsx";
 import SelectInput from "../../components/SelectInput/index.jsx";
-
 import RadioInputContainer from "../../components/RadioInputContainer/index.jsx";
 import TextAreaInput from "../../components/TextAreaInput/index.jsx";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { evaluationSheetSchema } from "../../schemas/patientFormSchemas.js";
 
 const EvaluationSheet = () => {
  
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(evaluationSheetSchema)
+  })
 
   const submitForm = (data) => {
     console.log(data);
@@ -33,12 +36,14 @@ const EvaluationSheet = () => {
               inputType={"text"}
               placeholder={"Insira o ID"}
               {...register("ID_paciente")}
+              errorMessage={errors.ID_paciente?.message}
             />
             <InputContainer
               id={"date"}
               labelText={"Data:"}
               inputType={"date"}
               {...register("data_avaliacao")}
+              errorMessage={errors.data_avaliacao?.message}
             />
           </div>
 
@@ -48,6 +53,7 @@ const EvaluationSheet = () => {
               labelText={"Nome:"}
               placeholder={"Insira o nome do paciente"}
               {...register("nome_paciente")}
+              errorMessage={errors.nome_paciente?.message}
             />
           </div>
 
@@ -57,6 +63,7 @@ const EvaluationSheet = () => {
               labelText={"Ângulo poplíteo"}
               inputType={"number"}
               {...register("angulo_popliteo")}
+              errorMessage={errors.angulo_popliteo?.message}
             />
             <span>°</span>
 
@@ -64,6 +71,7 @@ const EvaluationSheet = () => {
               id={"tat_perimetry"}
               labelText={"Perimetria TAT"}
               {...register("perimetria_tat")}
+              errorMessage={errors.perimetria_tat?.message}
               options={[
                 {
                   text: "5cm",
@@ -89,12 +97,14 @@ const EvaluationSheet = () => {
                 labelText={"Tempo:"}
                 inputType={"time"}
                 {...register("bipodal_aberto_tempo1")}
+                errorMessage={errors.bipodal_aberto_tempo1?.message}
               />
               <TextAreaInput
                 id={"bipodal_eyesOpen_coments_1"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes..."}
                 {...register("bipodal_aberto_comentario1")}
+                errorMessage={errors.bipodal_aberto_comentario1?.message}
               />
             </FormSubfield>
 
@@ -104,12 +114,14 @@ const EvaluationSheet = () => {
                 labelText={"Tempo"}
                 inputType={"time"}
                 {...register("bipodal_aberto_tempo2")}
+                errorMessage={errors.bipodal_aberto_tempo2?.message}
               />
               <TextAreaInput
                 id={"bipodal_eyesOpen_coments_2"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes..."}
                 {...register("bipodal_aberto_comentario2")}
+                errorMessage={errors.bipodal_aberto_comentario2?.message}
                 
               />
             </FormSubfield>
@@ -122,12 +134,14 @@ const EvaluationSheet = () => {
                 labelText={"Tempo:"}
                 inputType={"time"}
                 {...register("bipodal_fechado_tempo1")}
+                errorMessage={errors.bipodal_fechado_tempo1?.message}
               />
               <TextAreaInput
                 id={"bipodal_eyesClosed_coments_1"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes"}
                 {...register("bipodal_fechado_comentario1")}
+                errorMessage={errors.bipodal_fechado_comentario1?.message}
               />
             </FormSubfield>
 
@@ -137,12 +151,14 @@ const EvaluationSheet = () => {
                 labelText={"Tempo"}
                 inputType={"time"}
                 {...register("bipodal_fechado_tempo2")}
+                errorMessage={errors.bipodal_fechado_tempo2?.message}
               />
               <TextAreaInput
                 id={"bipodal_fechado_comentario2"}
                 labelText={"Comentários"}
                 placeholder={"Insira os comentários pertinentes"}
                 {...register("bipodal_fechado_comentario2")}
+                errorMessage={errors.bipodal_fechado_comentario2?.message}
               />
             </FormSubfield>
           </FormField>
@@ -168,6 +184,7 @@ const EvaluationSheet = () => {
                 }
               ]}
               {...register("membro_preferencia")}
+              errorMessage={errors.membro_preferencia?.message}
             />
           </FormSubfield>
 
@@ -178,12 +195,14 @@ const EvaluationSheet = () => {
                 labelText={"Tempo:"}
                 inputType={"time"}
                 {...register("unipodal_tempo1")}
+                errorMessage={errors.unipodal_tempo1?.message}
               />
               <TextAreaInput
                 id={"unipodal_coments_1"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes"}
                 {...register("unipodal_comentario1")}
+                errorMessage={errors.unipodal_comentario1?.message}
               />
             </FormSubfield>
 
@@ -193,12 +212,14 @@ const EvaluationSheet = () => {
                 labelText={"Tempo:"}
                 inputType={"time"}
                 {...register("unipodal_tempo2")}
+                errorMessage={errors.unipodal_tempo2?.message}
               />
               <TextAreaInput
                 id={"unipodal_coments_2"}
                 labelText={"Comentários:"}
                 placeholder={"Insira os comentários pertinentes"}
                 {...register("unipodal_comentario2")}
+                errorMessage={errors.unipodal_comentario2?.message}
                
               />
             </FormSubfield>
@@ -212,18 +233,21 @@ const EvaluationSheet = () => {
               labelText={"1"}
               inputType={"number"}
               {...register("af_sup_dir")}
+              errorMessage={errors.af_sup_dir?.message}
             />
             <InputContainer
               id={"upperMember_right_2"}
               labelText={"2"}
               inputType={"number"}
               {...register("af_sup_dir")}
+              errorMessage={errors.af_sup_dir?.message}
             />
             <InputContainer
               id={"upperMember_right_3"}
               labelText={"3"}
               inputType={"number"}
               {...register("af_sup_dir")}
+              errorMessage={errors.af_sup_dir?.message}
             />
           </FormField>
 
@@ -233,18 +257,21 @@ const EvaluationSheet = () => {
               labelText={"1"}
               inputType={"number"}
               {...register("af_sup_esq")}
+              errorMessage={errors.af_sup_esq?.message}
             />
             <InputContainer
               id={"upperMember_left_2"}
               labelText={"2"}
               inputType={"number"}
               {...register("af_sup_esq")}
+              errorMessage={errors.af_sup_esq?.message}
             />
             <InputContainer
               id={"upperMember_left_3"}
               labelText={"3"}
               inputType={"number"}
               {...register("af_sup_esq")}
+              errorMessage={errors.af_sup_esq?.message}
             />
           </FormField>
         </ExamContainer>
@@ -256,18 +283,21 @@ const EvaluationSheet = () => {
               labelText={"1"}
               inputType={"number"}
               {...register("mob_tor_dir1")}
+              errorMessage={errors.mob_tor_dir1?.message}
             />
             <InputContainer
               id={"ankleMobility_right_2"}
               labelText={"2"}
               inputType={"number"}
               {...register("mob_tor_dir2")}
+              errorMessage={errors.mob_tor_dir2?.message}
               />
             <InputContainer
               id={"ankleMobility_right_3"}
               labelText={"3"}
               inputType={"number"}
               {...register("mob_tor_dir3")}
+              errorMessage={errors.mob_tor_dir3?.message}
             />
           </FormField>
 
@@ -277,18 +307,21 @@ const EvaluationSheet = () => {
               labelText={"1"}
               inputType={"number"}
               {...register("mob_tor_esq1")}
+              errorMessage={errors.mob_tor_esq1?.message}
             />
             <InputContainer
               id={"ankleMobility_left_2"}
               labelText={"2"}
               inputType={"number"}
               {...register("mob_tor_esq2")}
+              errorMessage={errors.mob_tor_esq2?.message}
             />
             <InputContainer
               id={"ankleMobility_left_3"}
               labelText={"3"}
               inputType={"number"}
               {...register("mob_tor_esq3")}
+              errorMessage={errors.mob_tor_esq3?.message}
             />
           </FormField>
         </ExamContainer>
@@ -297,18 +330,21 @@ const EvaluationSheet = () => {
           <FormField title={"MI Direito"}>
             <InputContainer
               {...register("for_musc_dir1")}
+              errorMessage={errors.for_musc_dir1?.message}
               id={"muscleStrenght_right_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
               {...register("for_musc_dir2")}
+              errorMessage={errors.for_musc_dir2?.message}
               id={"muscleStrenght_right_2"}
               labelText={"2"}
               inputType={"number"}
             />
             <InputContainer
               {...register("for_musc_dir3")}
+              errorMessage={errors.for_musc_dir3?.message}
               id={"muscleStrenght_right_3"}
               labelText={"3"}
               inputType={"number"}
@@ -318,18 +354,21 @@ const EvaluationSheet = () => {
           <FormField title={"MI Esquerdo"}>
             <InputContainer
               {...register("for_musc_esq1")}
+              errorMessage={errors.for_musc_esq1?.message}
               id={"muscleStrenght_left_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
               {...register("for_musc_esq2")}
+              errorMessage={errors.for_musc_esq2?.message}
               id={"muscleStrenght_left_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
               {...register("for_musc_esq3")}
+              errorMessage={errors.for_musc_esq3?.message}
               id={"muscleStrenght_left_1"}
               labelText={"1"}
               inputType={"number"}
@@ -341,18 +380,21 @@ const EvaluationSheet = () => {
           <FormField title={"5 repetições seg."}>
             <InputContainer
               {...register("sentar_levantar1")}
+              errorMessage={errors.sentar_levantar1?.message}
               id={"upDown_1"}
               labelText={"1"}
               inputType={"number"}
             />
             <InputContainer
               {...register("sentar_levantar2")}
+              errorMessage={errors.sentar_levantar2?.message}
               id={"upDown_2"}
               labelText={"2"}
               inputType={"number"}
             />
             <InputContainer
               {...register("sentar_levantar3")}
+              errorMessage={errors.sentar_levantar3?.message}
               id={"upDown_3"}
               labelText={"3"}
               inputType={"number"}

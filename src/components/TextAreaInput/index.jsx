@@ -1,7 +1,7 @@
 import { forwardRef } from "react"
 import StyledTextAreaInput from "./textAreaInput";
 
-const TextAreaInput = ({id, placeholder, labelText, labelSize, ...rest}, ref) => {
+const TextAreaInput = ({id, placeholder, labelText, labelSize, errorMessage, ...rest}, ref) => {
     return(
         
         <StyledTextAreaInput $labelSize={labelSize}>
@@ -16,7 +16,7 @@ const TextAreaInput = ({id, placeholder, labelText, labelSize, ...rest}, ref) =>
               ref={ref}
               {...rest}
             />
-
+            <span>{errorMessage && errorMessage}</span>
         </StyledTextAreaInput>
 
     )
