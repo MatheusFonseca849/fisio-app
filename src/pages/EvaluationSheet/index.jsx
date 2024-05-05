@@ -12,6 +12,7 @@ import TextAreaInput from "../../components/TextAreaInput/index.jsx";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { evaluationSheetSchema } from "../../schemas/patientFormSchemas.js";
+import Chronometer from "../../components/Chronometer/index.jsx";
 
 const EvaluationSheet = () => {
  
@@ -92,10 +93,8 @@ const EvaluationSheet = () => {
         <ExamContainer title={"Bipodal"}>
           <FormField title={"Olho Aberto"}>
             <FormSubfield title={"1"}>
-              <InputContainer
-                id={"bipodal_eyesOpen_time_1"}
+              <Chronometer
                 labelText={"Tempo:"}
-                inputType={"time"}
                 {...register("bipodal_aberto_tempo1")}
                 errorMessage={errors.bipodal_aberto_tempo1?.message}
               />
