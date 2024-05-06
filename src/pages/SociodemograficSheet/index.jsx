@@ -1,3 +1,4 @@
+import { useForm } from "react-hook-form";
 import EvaluationHeaderForm from "../../components/EvaluationHeaderForm";
 import ExamContainer from "../../components/ExamContainer";
 import Header from "../../components/Header";
@@ -6,29 +7,51 @@ import RadioInputContainer from "../../components/RadioInputContainer";
 import SelectInput from "../../components/SelectInput";
 import SubmitButton from "../../components/SubmitButton";
 import StyledSocioForm from "./sociodemograficSheet.js";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { socioFormSchema } from "../../schemas/patientFormSchemas.js";
+
+
+
 
 const SociodemograficSheet = () => {
   const defaultLabelSize = "16px";
   const defaultOptionSize = "16px";
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(socioFormSchema),
+  });
+
+  const submitForm = (data) => {
+    console.log(data);
+    console.log(errors);
+  };
 
   return (
     <>
       <Header>
         <h1>Questionário Sociodemográfico</h1>
       </Header>
-      <StyledSocioForm>
+      <StyledSocioForm onSubmit={handleSubmit(submitForm)}>
         <EvaluationHeaderForm>
           <div className="headerForm_column">
             <InputContainer
               id={"name"}
               labelText={"Nome:"}
               placeholder={"Nome do paciente"}
+              {...register("nome_paciente")}
+              errorMessage={errors.nome_paciente?.message}
             />
             <InputContainer
               id={"id"}
               labelText={"ID:"}
               placeholder={"Insira o ID"}
               inputType={"number"}
+              {...register("ID_paciente")}
+              errorMessage={errors.ID_paciente?.message}
             />
           </div>
 
@@ -37,13 +60,22 @@ const SociodemograficSheet = () => {
               id={"dateOfBirth"}
               labelText={"Data nascimento:"}
               inputType={"date"}
+              {...register("data_nascimento")}
+              errorMessage={errors.data_nascimento?.message}
             />
             <InputContainer
               id={"age"}
               labelText={"Idade"}
               inputType={"number"}
+              {...register("idade_paciente")}
+              errorMessage={errors.idade_paciente?.message}
             />
-            <InputContainer id={"phoneNumber"} labelText={"Contato"} />
+            <InputContainer
+              id={"phoneNumber"}
+              labelText={"Contato"}
+              {...register("contato_paciente")}
+              errorMessage={errors.contato_paciente?.message}
+            />
           </div>
 
           <div className="headerForm_column">
@@ -51,22 +83,35 @@ const SociodemograficSheet = () => {
               id={"weight"}
               labelText={"Peso:"}
               inputType={"number"}
+              steps={"any"}
+              {...register("peso_paciente")}
+              errorMessage={errors.peso_paciente?.message}
             />
             <InputContainer
               id={"height"}
               labelText={"Altura:"}
               inputType={"number"}
+              steps={"any"}
+              {...register("altura_paciente")}
+              errorMessage={errors.altura_paciente?.message}
             />
             <InputContainer
               id={"imc"}
               labelText={"IMC:"}
               inputType={"number"}
+              {...register("imc_paciente")}
+              errorMessage={errors.imc_paciente?.message}
             />
           </div>
 
           <div className="headerForm_column"></div>
           <div className="headerForm_column">
-            <InputContainer id={"affiliation"} labelText={"Afiliação:"} />
+            <InputContainer
+              id={"affiliation"}
+              labelText={"Afiliação:"}
+              {...register("filiacao_paciente")}
+              errorMessage={errors.filiacao_paciente?.message}
+            />
           </div>
         </EvaluationHeaderForm>
 
@@ -76,11 +121,15 @@ const SociodemograficSheet = () => {
             labelText={"Tempo de diagnóstico (anos)"}
             labelSize={defaultLabelSize}
             inputType={"number"}
+            {...register("tempo_diagnostico")}
+            errorMessage={errors.tempo_diagnostico?.message}
           />
           <SelectInput
             id={"hemophiliaInFamily"}
             labelText={"Ao nascer, já haviam casos de hemofilia na familia?"}
             labelSize={defaultLabelSize}
+            {...register("hemofilia_na_familia")}
+            errorMessage={errors.hemofilia_na_familia?.message}
             options={[
               {
                 text: "Sim",
@@ -92,7 +141,7 @@ const SociodemograficSheet = () => {
               },
               {
                 text: "Não sabe",
-                value: "unknown",
+                value: undefined,
               },
             ]}
           />
@@ -101,6 +150,8 @@ const SociodemograficSheet = () => {
             labelText={"Raça/cor"}
             labelSize={defaultLabelSize}
             optionSize={"18px"}
+            {...register("etnia")}
+            errorMessage={errors.etnia?.message}
             options={[
               {
                 value: "branco",
@@ -121,6 +172,8 @@ const SociodemograficSheet = () => {
             id={"maritalStatus"}
             labelText={"Estado Civil"}
             labelSize={defaultLabelSize}
+            {...register("estado_civil")}
+            errorMessage={errors.estado_civil?.message}
             options={[
               {
                 value: "solteiro",
@@ -149,6 +202,8 @@ const SociodemograficSheet = () => {
             labelText={"Escolaridade"}
             labelSize={defaultLabelSize}
             optionSize={defaultOptionSize}
+            {...register("escolaridade")}
+            errorMessage={errors.escolaridade?.message}
             options={[
               {
                 value: "nao_frequentou",
@@ -189,6 +244,8 @@ const SociodemograficSheet = () => {
             id={"workingNow"}
             labelText={"Exerce atividade laboral?"}
             labelSize={defaultLabelSize}
+            {...register("atividade_laboral")}
+            errorMessage={errors.atividade_laboral?.message}
             options={[
               {
                 value: true,
@@ -209,6 +266,8 @@ const SociodemograficSheet = () => {
             id={"student"}
             labelText={"Estudante?"}
             labelSize={defaultLabelSize}
+            {...register("estudante")}
+            errorMessage={errors.estudante?.message}
             options={[
               {
                 value: true,
@@ -228,6 +287,8 @@ const SociodemograficSheet = () => {
           <RadioInputContainer
             id={"healthInsurance"}
             labelText={"Possuí plano de saúde?"}
+            {...register("plano_de_saude")}
+            errorMessage={errors.plano_de_saude?.message}
             options={[
               {
                 value: true,
@@ -243,6 +304,8 @@ const SociodemograficSheet = () => {
           <RadioInputContainer
             id={"retired"}
             labelText={"Possuí auxílio ou aposentadoria por doença?"}
+            {...register("auxilio_ou_aposentado")}
+            errorMessage={errors.auxilio_ou_aposentado?.message}
             options={[
               {
                 value: true,
@@ -258,6 +321,8 @@ const SociodemograficSheet = () => {
           <RadioInputContainer
             id={"phisicallyActive"}
             labelText={"Pratica atividade física?"}
+            {...register("atividade_fisica")}
+            errorMessage={errors.atividade_fisica?.message}
             options={[
               {
                 value: true,
@@ -276,6 +341,8 @@ const SociodemograficSheet = () => {
             id={"typeOfTreatment"}
             labelText={"Tipo de tratamento"}
             labelSize={defaultLabelSize}
+            {...register("tipo_tratamento")}
+            errorMessage={errors.tipo_tratamento?.message}
             options={[
               {
                 value: "demanda",
@@ -309,6 +376,8 @@ const SociodemograficSheet = () => {
             labelText={"Desenvolveu inibidores"}
             labelSize={defaultLabelSize}
             optionSize={defaultOptionSize}
+            {...register("desenvolveu_inibidores")}
+            errorMessage={errors.desenvolveu_inibidores?.message}
             options={[
               {
                 value: true,
@@ -326,6 +395,8 @@ const SociodemograficSheet = () => {
             labelText={"Tem alguma doença crônica?"}
             labelSize={defaultLabelSize}
             optionSize={defaultOptionSize}
+            {...register("doenca_cronica")}
+            errorMessage={errors.doenca_cronica?.message}
             options={[
               {
                 value: true,
@@ -344,6 +415,8 @@ const SociodemograficSheet = () => {
             }
             labelSize={defaultLabelSize}
             optionSize={defaultOptionSize}
+            {...register("ajuda_medica")}
+            errorMessage={errors.ajuda_medica?.message}
             options={[
               {
                 value: true,
@@ -360,6 +433,8 @@ const SociodemograficSheet = () => {
             labelText={"Nos últimos 12 meses, fez sessão de Fisioterapia?"}
             labelSize={defaultLabelSize}
             optionSize={defaultOptionSize}
+            {...register("fez_fisioterapia")}
+            errorMessage={errors.fez_fisioterapia?.message}
             options={[
               {
                 value: true,
@@ -376,26 +451,34 @@ const SociodemograficSheet = () => {
             labelText={"Se não, qual motivo:"}
             labelSize={defaultLabelSize}
             optionSize={defaultOptionSize}
+            {...register("motivo_nao_fisioterapia")}
+            errorMessage={errors.motivo_nao_fisioterapia?.message}
             options={[
               {
                 value: "nao_recomendado",
-                text: "Não foi recomendado"
+                text: "Não foi recomendado",
               },
               {
                 value: "nao_conseguiu_agendar",
-                text: "Não consegui agendar pelo SUS"
+                text: "Não consegui agendar pelo SUS",
               },
               {
                 value: "medo_de_piorar",
-                text:"Tive medo de piorar com as sessões"
+                text: "Tive medo de piorar com as sessões",
               },
               {
                 value: "sem_interesse",
-                text: "Não tive interesse"
-              }
+                text: "Não tive interesse",
+              },
             ]}
           />
-          <InputContainer id={"medicamentos"} labelText={"Medicamentos:"} labelSize={defaultLabelSize}/>
+          <InputContainer
+            id={"medicamentos"}
+            labelText={"Medicamentos:"}
+            labelSize={defaultLabelSize}
+            {...register("medicamentos")}
+            errorMessage={errors.medicamentos?.message}
+          />
           <SubmitButton>Enviar Formulário</SubmitButton>
         </ExamContainer>
       </StyledSocioForm>

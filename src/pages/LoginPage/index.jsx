@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import LoginForm from "../../components/LoginForm";
 import LoginPageFooter from "../../components/LoginRegisterFooter";
 
+
 const LoginPage = () => {
+
+  
+
   return (
     <>
       <Header>
@@ -12,7 +17,7 @@ const LoginPage = () => {
       
       <LoginPageFooter>
       <h3>Ainda não tem uma conta?</h3>
-            <span>Cadastre-se <a href="">aqui</a></span>
+            <span>Cadastre-se <Link to={'/cadastro'}>aqui</Link></span>
       </LoginPageFooter>
       
     </>

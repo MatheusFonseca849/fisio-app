@@ -4,7 +4,7 @@ const SubmitButton = ({children}) => {
 
     return(
 
-        <StyledSubmitButton>{children}</StyledSubmitButton>
+        <StyledSubmitButton type="submit">{children}</StyledSubmitButton>
 
     )
 
