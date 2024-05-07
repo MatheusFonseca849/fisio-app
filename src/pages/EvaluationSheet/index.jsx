@@ -15,10 +15,13 @@ import { evaluationSheetSchema } from "../../schemas/patientFormSchemas.js";
 import Chronometer from "../../components/Chronometer/index.jsx";
 
 const EvaluationSheet = () => {
- 
-  const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: yupResolver(evaluationSheetSchema)
-  })
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(evaluationSheetSchema),
+  });
 
   const submitForm = (data) => {
     console.log(data);
@@ -93,7 +96,7 @@ const EvaluationSheet = () => {
         <ExamContainer title={"Bipodal"}>
           <FormField title={"Olho Aberto"}>
             <FormSubfield title={"1"}>
-              <Chronometer
+              <InputContainer
                 labelText={"Tempo:"}
                 {...register("bipodal_aberto_tempo1")}
                 errorMessage={errors.bipodal_aberto_tempo1?.message}
@@ -111,7 +114,6 @@ const EvaluationSheet = () => {
               <InputContainer
                 id={"bipodal_eyesOpen_time_2"}
                 labelText={"Tempo"}
-                inputType={"time"}
                 {...register("bipodal_aberto_tempo2")}
                 errorMessage={errors.bipodal_aberto_tempo2?.message}
               />
@@ -121,7 +123,6 @@ const EvaluationSheet = () => {
                 placeholder={"Insira os comentários pertinentes..."}
                 {...register("bipodal_aberto_comentario2")}
                 errorMessage={errors.bipodal_aberto_comentario2?.message}
-                
               />
             </FormSubfield>
           </FormField>
@@ -131,7 +132,6 @@ const EvaluationSheet = () => {
               <InputContainer
                 id={"bipodal_eyesClosed_time_1"}
                 labelText={"Tempo:"}
-                inputType={"time"}
                 {...register("bipodal_fechado_tempo1")}
                 errorMessage={errors.bipodal_fechado_tempo1?.message}
               />
@@ -148,7 +148,6 @@ const EvaluationSheet = () => {
               <InputContainer
                 id={"bipodal_eyesClosed_time_2"}
                 labelText={"Tempo"}
-                inputType={"time"}
                 {...register("bipodal_fechado_tempo2")}
                 errorMessage={errors.bipodal_fechado_tempo2?.message}
               />
@@ -165,25 +164,24 @@ const EvaluationSheet = () => {
 
         <ExamContainer title={"Unipodal"}>
           <FormSubfield>
-            
             <RadioInputContainer
               id={"membro_preferencia"}
               labelText={"Membro de preferência"}
               labelSize={"16px"}
-              options={[
-                {
-                  title: 'esquerdo',
-                  value: 'esquerdo',
-                  label: 'Esq'
-                },
-                {
-                  title: 'Direito',
-                  value: 'direito',
-                  label: 'Dir'
-                }
-              ]}
               {...register("membro_preferencia")}
               errorMessage={errors.membro_preferencia?.message}
+              options={[
+                {
+                  title: "Esquerdo",
+                  value: "esquerdo",
+                  label: "Esq",
+                },
+                {
+                  title: "Direito",
+                  value: "direito",
+                  label: "Dir",
+                },
+              ]}
             />
           </FormSubfield>
 
@@ -219,7 +217,6 @@ const EvaluationSheet = () => {
                 placeholder={"Insira os comentários pertinentes"}
                 {...register("unipodal_comentario2")}
                 errorMessage={errors.unipodal_comentario2?.message}
-               
               />
             </FormSubfield>
           </FormField>
@@ -255,21 +252,21 @@ const EvaluationSheet = () => {
               id={"upperMember_left_1"}
               labelText={"1"}
               inputType={"number"}
-              {...register("af_sup_esq")}
+              {...register("af_sup_esq1")}
               errorMessage={errors.af_sup_esq?.message}
             />
             <InputContainer
               id={"upperMember_left_2"}
               labelText={"2"}
               inputType={"number"}
-              {...register("af_sup_esq")}
+              {...register("af_sup_esq2")}
               errorMessage={errors.af_sup_esq?.message}
             />
             <InputContainer
               id={"upperMember_left_3"}
               labelText={"3"}
               inputType={"number"}
-              {...register("af_sup_esq")}
+              {...register("af_sup_esq3")}
               errorMessage={errors.af_sup_esq?.message}
             />
           </FormField>
@@ -290,7 +287,7 @@ const EvaluationSheet = () => {
               inputType={"number"}
               {...register("mob_tor_dir2")}
               errorMessage={errors.mob_tor_dir2?.message}
-              />
+            />
             <InputContainer
               id={"ankleMobility_right_3"}
               labelText={"3"}

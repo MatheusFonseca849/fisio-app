@@ -1,6 +1,6 @@
 import { useState, useRef, forwardRef } from "react";
 
-const Chronometer = ({ title, titleSize }) => {
+const Chronometer = ({ labelText, titleSize }) => {
   const [time, setTime] = useState(null);
   const [now, setNow] = useState(null);
   const intervalRef = useRef(null);
@@ -21,7 +21,7 @@ const Chronometer = ({ title, titleSize }) => {
 
   return (
     <div>
-      <h3>{title}</h3>
+      <h3>{labelText}</h3>
       <span className="chronometer">{timePassed}</span>
       <div>
         <button onClick={handleStart}>Start</button>

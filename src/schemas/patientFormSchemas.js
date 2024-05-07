@@ -89,7 +89,57 @@ export const evaluationSheetSchema = yup.object({
     .number()
     .typeError("Número inválido")
     .required(requiredMessage),
-    bipodal_aberto_tempo1: yup
-    .number()
-    .required(requiredMessage)
+  bipodal_aberto_tempo1: yup
+    .string()
+    .matches(/(\d){2}:(\d){2}/, "Formato invalido")
+    .required(requiredMessage),
+  bipodal_aberto_comentario1: yup.string().required(requiredMessage),
+  bipodal_aberto_tempo2: yup
+    .string()
+    .matches(/(\d){2}:(\d){2}/, "Formato inválido")
+    .required(requiredMessage),
+  bipodal_aberto_comentario2: yup.string().required(requiredMessage),
+  bipodal_fechado_tempo1: yup
+    .string()
+    .matches(/(\d){2}:(\d){2}/)
+    .required(requiredMessage),
+  bipodal_fechado_comentario1: yup.string().required(requiredMessage),
+  bipodal_fechado_tempo2: yup
+    .string()
+    .matches(/(\d){2}:(\d){2}/, "Formato Inválido")
+    .required(requiredMessage),
+  bipodal_fechado_comentario2: yup.string().required(requiredMessage),
+  membro_preferencia: yup.string().required(requiredMessage),
+  unipodal_tempo1: yup
+    .string()
+    .matches(/(\d){2}:(\d){2}/, "Formato Inválido")
+    .required(requiredMessage),
+  unipodal_comentario1: yup.string().required(requiredMessage),
+  unipodal_tempo2: yup
+    .string()
+    .matches(/(\d){2}:(\d){2}/, "Formato inválido")
+    .required(requiredMessage),
+  unipodal_comentario2: yup.string().required(requiredMessage),
+af_sup_dir1:yup.number().typeError("Valor inválido").required(requiredMessage),
+af_sup_dir2:yup.number().typeError("Valor inválido").required(requiredMessage),
+af_sup_dir3:yup.number().typeError("Valor inválido").required(requiredMessage),
+af_sup_esq1:yup.number().typeError("Valor inválido").required(requiredMessage),
+af_sup_esq2:yup.number().typeError("Valor inválido").required(requiredMessage),
+af_sup_esq3:yup.number().typeError("Valor inválido").required(requiredMessage),
+mob_tor_dir1:yup.number().typeError("Valor inválido").required(requiredMessage),
+mob_tor_dir2:yup.number().typeError("Valor inválido").required(requiredMessage),
+mob_tor_dir3:yup.number().typeError("Valor inválido").required(requiredMessage),
+mob_tor_esq1:yup.number().typeError("Valor inválido").required(requiredMessage),
+mob_tor_esq2:yup.number().typeError("Valor inválido").required(requiredMessage),
+mob_tor_esq3:yup.number().typeError("Valor inválido").required(requiredMessage),
+for_musc_dir1:yup.number().typeError("Valor inválido").required(requiredMessage),
+for_musc_dir2:yup.number().typeError("Valor inválido").required(requiredMessage),
+for_musc_dir3:yup.number().typeError("Valor inválido").required(requiredMessage),
+for_musc_esq1:yup.number().typeError("Valor inválido").required(requiredMessage),
+for_musc_esq2:yup.number().typeError("Valor inválido").required(requiredMessage),
+for_musc_esq3:yup.number().typeError("Valor inválido").required(requiredMessage),
+sentar_levantar1:yup.number().typeError("Valor inválido").required(requiredMessage),
+sentar_levantar2:yup.number().typeError("Valor inválido").required(requiredMessage),
+sentar_levantar3:yup.number().typeError("Valor inválido").required(requiredMessage),
+
 });
