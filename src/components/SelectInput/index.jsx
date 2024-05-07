@@ -1,9 +1,23 @@
 import { forwardRef } from "react";
 import StyledSelectInput from "./selectInput.js";
 
-const SelectInput = ({ id, labelText, options, labelSize, ...rest }, ref) => {
+const SelectInput = (
+  { id,
+    labelText,
+    options,
+    labelSize,
+    optionSize,
+    errorMessage,
+     ...rest
+     },
+    ref
+) => {
   return (
-    <StyledSelectInput key={id} $labelSize={labelSize && labelSize}>
+    <StyledSelectInput
+      key={id}
+      $labelSize={labelSize && labelSize}
+      $optionSize={optionSize && optionSize}
+    >
       <label htmlFor={id}>{labelText}</label>
       <select
         key={id}
@@ -19,6 +33,7 @@ const SelectInput = ({ id, labelText, options, labelSize, ...rest }, ref) => {
           </option>
         ))}
       </select>
+      <span>{errorMessage}</span>
     </StyledSelectInput>
   );
 };

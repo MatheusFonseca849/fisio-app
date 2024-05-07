@@ -1,5 +1,6 @@
 import { createContext } from "react";
-import { useForm } from "react-hook-form";
+import * as yup from "yup"
+
 
 export const FormContext = createContext({})
 
@@ -9,13 +10,8 @@ export const FormProvider = ({ children }) => {
         console.log("Funcionou")
     }
 
-    const evaluationFormRegister = useForm()
-    const socioFormRegister = useForm()
-    const jointHealthRegister = useForm()
-
-
     return(
-        <FormContext.Provider value={{contextWorks, evaluationFormRegister, socioFormRegister, jointHealthRegister}}>
+        <FormContext.Provider value={{ contextWorks }}>
             {children}
         </FormContext.Provider>
     )

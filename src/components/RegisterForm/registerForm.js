@@ -8,6 +8,7 @@ background-color: var(--color-grey-900);
     padding: 16px;
     min-width: 350px;
     width: fit-content;
+    max-width: 80%;
     border-radius: var(--radius-form-container);
     
     div{
