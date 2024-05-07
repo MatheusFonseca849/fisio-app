@@ -120,26 +120,230 @@ export const evaluationSheetSchema = yup.object({
     .matches(/(\d){2}:(\d){2}/, "Formato inválido")
     .required(requiredMessage),
   unipodal_comentario2: yup.string().required(requiredMessage),
-af_sup_dir1:yup.number().typeError("Valor inválido").required(requiredMessage),
-af_sup_dir2:yup.number().typeError("Valor inválido").required(requiredMessage),
-af_sup_dir3:yup.number().typeError("Valor inválido").required(requiredMessage),
-af_sup_esq1:yup.number().typeError("Valor inválido").required(requiredMessage),
-af_sup_esq2:yup.number().typeError("Valor inválido").required(requiredMessage),
-af_sup_esq3:yup.number().typeError("Valor inválido").required(requiredMessage),
-mob_tor_dir1:yup.number().typeError("Valor inválido").required(requiredMessage),
-mob_tor_dir2:yup.number().typeError("Valor inválido").required(requiredMessage),
-mob_tor_dir3:yup.number().typeError("Valor inválido").required(requiredMessage),
-mob_tor_esq1:yup.number().typeError("Valor inválido").required(requiredMessage),
-mob_tor_esq2:yup.number().typeError("Valor inválido").required(requiredMessage),
-mob_tor_esq3:yup.number().typeError("Valor inválido").required(requiredMessage),
-for_musc_dir1:yup.number().typeError("Valor inválido").required(requiredMessage),
-for_musc_dir2:yup.number().typeError("Valor inválido").required(requiredMessage),
-for_musc_dir3:yup.number().typeError("Valor inválido").required(requiredMessage),
-for_musc_esq1:yup.number().typeError("Valor inválido").required(requiredMessage),
-for_musc_esq2:yup.number().typeError("Valor inválido").required(requiredMessage),
-for_musc_esq3:yup.number().typeError("Valor inválido").required(requiredMessage),
-sentar_levantar1:yup.number().typeError("Valor inválido").required(requiredMessage),
-sentar_levantar2:yup.number().typeError("Valor inválido").required(requiredMessage),
-sentar_levantar3:yup.number().typeError("Valor inválido").required(requiredMessage),
+  af_sup_dir1: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  af_sup_dir2: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  af_sup_dir3: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  af_sup_esq1: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  af_sup_esq2: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  af_sup_esq3: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  mob_tor_dir1: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  mob_tor_dir2: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  mob_tor_dir3: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  mob_tor_esq1: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  mob_tor_esq2: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  mob_tor_esq3: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  for_musc_dir1: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  for_musc_dir2: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  for_musc_dir3: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  for_musc_esq1: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  for_musc_esq2: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  for_musc_esq3: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  sentar_levantar1: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  sentar_levantar2: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+  sentar_levantar3: yup
+    .number()
+    .typeError("Valor inválido")
+    .required(requiredMessage),
+});
 
+export const jointHealthSchema = yup.object({
+  numero_avaliacao: yup.number().required(requiredMessage),
+  data_avaliacao: yup.date().required(requiredMessage),
+  ID_paciente: yup.number().required(requiredMessage),
+  nome_paciente: yup
+    .string()
+    .matches(/(^[A-Za-z]+$)/, "Caractere inválido detectado")
+    .required(requiredMessage),
+  cot_esq_tipo_edema: yup.string().required(requiredMessage),
+  cot_esq_ref_ossea: yup.string().required(requiredMessage),
+  cot_esq_palpavel: yup.string().required(requiredMessage),
+  cot_esq_pontuacao: yup.number().required(requiredMessage),
+  cot_esq_duracao_edema: yup.number().required(requiredMessage),
+  cot_esq_cometarios: yup.string().required(requiredMessage),
+  cot_dir_tipo_edema: yup.string().required(requiredMessage),
+  cot_dir_ref_ossea: yup.string().required(requiredMessage),
+  cot_dir_palpavel: yup.string().required(requiredMessage),
+  cot_dir_pontuacao: yup.number().required(requiredMessage),
+  cot_dir_duracao_edema: yup.number().required(requiredMessage),
+  cot_dir_comentarios: yup.string().required(requiredMessage),
+  joe_esq_tipo_edema: yup.string().required(requiredMessage),
+  joe_esq_ref_ossea: yup.string().required(requiredMessage),
+  joe_esq_palpavel: yup.string().required(requiredMessage),
+  joe_esq_pontuacao: yup.number().required(requiredMessage),
+  joe_esq_duracao: yup.number().required(requiredMessage),
+  joe_esq_comentarios: yup.string().required(requiredMessage),
+  joe_dir_tipo_edema: yup.string().required(requiredMessage),
+  joe_dir_ref_ossea: yup.string().required(requiredMessage),
+  joe_dir_palpavel: yup.string().required(requiredMessage),
+  joe_dir_pontuacao: yup.number().required(requiredMessage),
+  joe_dir_duracao_edema: yup.number().required(requiredMessage),
+  joe_dir_comentarios: yup.string().required(requiredMessage),
+  tor_esq_tipo_edema: yup.string().required(requiredMessage),
+  tor_esq_ref_ossea: yup.string().required(requiredMessage),
+  tor_esq_palpavel: yup.string().required(requiredMessage),
+  tor_esq_pontuacao: yup.number().required(requiredMessage),
+  tor_esq_duracao_edema: yup.number().required(requiredMessage),
+  tor_esq_comentarios: yup.string().required(requiredMessage),
+  tor_dir_tipo_edema: yup.string().required(requiredMessage),
+  tor_dir_ref_ossea: yup.string().required(requiredMessage),
+  tor_dir_palpavel: yup.string().required(requiredMessage),
+  tor_dir_pontuacao: yup.number().required(requiredMessage),
+  tor_dir_duracao: yup.number().required(requiredMessage),
+  tor_dir_comentarios: yup.string().required(requiredMessage),
+  cot_esq_am_pontuacao: yup.number().required(requiredMessage),
+  cot_esq_am_comentarios: yup.string().required(requiredMessage),
+  cot_dir_am_pontuacao: yup.number().required(requiredMessage),
+  cot_dir_am_comentarios: yup.string().required(requiredMessage),
+  joe_esq_am_pontuacao: yup.number().required(requiredMessage),
+  joe_esq_am_comentarios: yup.string().required(requiredMessage),
+  joe_dir_am_pontuacao: yup.number().required(requiredMessage),
+  joe_dir_am_comentarios: yup.string().required(requiredMessage),
+  tor_esq_am_pontuacao: yup.number().required(requiredMessage),
+  tor_esq_am_comentarios: yup.string().required(requiredMessage),
+  tor_dir_am_pontuacao: yup.number().required(requiredMessage),
+  tor_dir_am_comentarios: yup.string().required(requiredMessage),
+  cot_esq_crep_palpavel: yup.string().required(requiredMessage),
+  cot_esq_crep_gravidade: yup.string().required(requiredMessage),
+  cot_esq_crep_pontuacao: yup.number().required(requiredMessage),
+  cot_dir_crep_palpavel: yup.string().required(requiredMessage),
+  cot_dir_crep_gravidade: yup.string().required(requiredMessage),
+  cot_dir_crep_pontuacao: yup.number().required(requiredMessage),
+  joe_esq_crep_palpavel: yup.string().required(requiredMessage),
+  joe_esq_crep_gravidade: yup.string().required(requiredMessage),
+  joe_esq_crep_pontuacao: yup.number().required(requiredMessage),
+  joe_dir_crep_palpavel: yup.string().required(requiredMessage),
+  joe_dir_crep_gravidade: yup.string().required(requiredMessage),
+  joe_dir_crep_pontuacao: yup.number().required(requiredMessage),
+  tor_esq_crep_palpavel: yup.string().required(requiredMessage),
+  tor_esq_crep_gravidade: yup.string().required(requiredMessage),
+  tor_esq_crep_pontuacao: yup.number().required(requiredMessage),
+  tor_dir_crep_palpavel: yup.string().required(requiredMessage),
+  tor_dir_crep_gravidade: yup.string().required(requiredMessage),
+  tor_dir_crep_pontuacao: yup.number().required(requiredMessage),
+  cot_esq_flexao: yup.number().required(requiredMessage),
+  cot_esq_posicao: yup.string().required(requiredMessage),
+  cot_esq_flexao_pontuacao: yup.number().required(requiredMessage),
+  cot_dir_flexao: yup.number().required(requiredMessage),
+  cot_dir_posicao: yup.string().required(requiredMessage),
+  cot_dir_flexao_pontuacao: yup.number().required(requiredMessage),
+  joe_esq_flexao: yup.number().required(requiredMessage),
+  joe_esq_posicao: yup.string().required(requiredMessage),
+  joe_esq_flexao_pontuacao: yup.number().required(requiredMessage),
+  joe_dir_flexao: yup.number().required(requiredMessage),
+  joe_dir_posicao: yup.string().required(requiredMessage),
+  joe_dir_flexao_pontuacao: yup.number().required(requiredMessage),
+  tor_esq_flexao: yup.number().required(requiredMessage),
+  tor_esq_posicao: yup.string().required(requiredMessage),
+  tor_esq_flexao_pontuacao: yup.number().required(requiredMessage),
+  tor_dir_flexao: yup.number().required(requiredMessage),
+  tor_dir_posicao: yup.string().required(requiredMessage),
+  tor_dir_flexao_pontuacao: yup.number().required(requiredMessage),
+  cot_esq_ext: yup.number().required(requiredMessage),
+  cot_esq_pe_posicao: yup.string().required(requiredMessage),
+  cot_esq_ext_pontuacao: yup.number().required(requiredMessage),
+  cot_dir_ext: yup.number().required(requiredMessage),
+  cot_dir_pe_posicao: yup.string().required(requiredMessage),
+  cot_dir_ext_pontuacao: yup.number().required(requiredMessage),
+  joe_esq_ext: yup.number().required(requiredMessage),
+  joe_esq_pe_posicao: yup.string().required(requiredMessage),
+  joe_esq_ext_pontuacao: yup.number().required(requiredMessage),
+  joe_dir_ext: yup.number().required(requiredMessage),
+  joe_dir_pe_posicao: yup.string().required(requiredMessage),
+  joe_dir_ext_pontuacao: yup.number().required(requiredMessage),
+  tor_esq_ext: yup.number().required(requiredMessage),
+  tor_esq_pe_posicao: yup.string().required(requiredMessage),
+  tor_esq_ext_pontuacao: yup.number().required(requiredMessage),
+  tor_dir_ext: yup.number().required(requiredMessage),
+  tor_dir_pe_posicao: yup.string().required(requiredMessage),
+  tor_dir_ext_pontuacao: yup.number().required(requiredMessage),
+  cot_esq_dor_comentarios: yup.string().required(requiredMessage),
+  cot_esq_dor_pontuacao: yup.number().required(requiredMessage),
+  cot_dir_dor_comentarios: yup.string().required(requiredMessage),
+  cot_dir_dor_pontuacao: yup.number().required(requiredMessage),
+  joe_esq_dor_comentarios: yup.string().required(requiredMessage),
+  joe_esq_dor_pontuacao: yup.number().required(requiredMessage),
+  joe_dir_dor_comentarios: yup.string().required(requiredMessage),
+  joe_dir_dor_pontuacao: yup.number().required(requiredMessage),
+  tor_esq_dor_comentarios: yup.string().required(requiredMessage),
+  tor_esq_dor_pontuacao: yup.number().required(requiredMessage),
+  tor_dir_dor_comentarios: yup.string().required(requiredMessage),
+  tor_dir_dor_pontuacao: yup.number().required(requiredMessage),
+  cot_esq_for_flexao: yup.number().required(requiredMessage),
+  cot_esq_for_ext: yup.number().required(requiredMessage),
+  cot_esq_for_pontuacao: yup.number().required(requiredMessage),
+  cot_dir_for_flexao: yup.number().required(requiredMessage),
+  cot_dir_for_ext: yup.number().required(requiredMessage),
+  cot_dir_for_pontuacao: yup.number().required(requiredMessage),
+  joe_esq_for_flexao: yup.number().required(requiredMessage),
+  joe_esq_for_ext: yup.number().required(requiredMessage),
+  joe_esq_for_pontuacao: yup.number().required(requiredMessage),
+  joe_dir_for_flexao: yup.number().required(requiredMessage),
+  joe_dir_for_ext: yup.number().required(requiredMessage),
+  joe_dir_for_pontuacao: yup.number().required(requiredMessage),
+  tor_esq_for_elev: yup.number().required(requiredMessage),
+  tor_esq_for_flexaoPlantar: yup.number().required(requiredMessage),
+  tor_esq_for_dFlexao: yup.number().required(requiredMessage),
+  tor_dir_for_elev: yup.number().required(requiredMessage),
+  tor_dir_for_flexaoPlantar: yup.number().required(requiredMessage),
+  tor_dir_for_dFlexao: yup.number().required(requiredMessage),
 });
