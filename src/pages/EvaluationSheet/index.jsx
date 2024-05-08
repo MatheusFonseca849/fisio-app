@@ -12,7 +12,7 @@ import TextAreaInput from "../../components/TextAreaInput/index.jsx";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { evaluationSheetSchema } from "../../schemas/patientFormSchemas.js";
-import Chronometer from "../../components/Chronometer/index.jsx";
+// import Chronometer from "../../components/Chronometer/index.jsx";
 
 const EvaluationSheet = () => {
   const {
