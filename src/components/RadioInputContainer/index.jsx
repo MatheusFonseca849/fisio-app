@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
 import StyledRadioInputContainer from "./radioInputContainer.js";
-import { useForm } from "react-hook-form";
 
 const RadioInputContainer = ({
   id,

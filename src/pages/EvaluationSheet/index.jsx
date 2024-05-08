@@ -228,22 +228,22 @@ const EvaluationSheet = () => {
               id={"upperMember_right_1"}
               labelText={"1"}
               inputType={"number"}
-              {...register("af_sup_dir")}
-              errorMessage={errors.af_sup_dir?.message}
+              {...register("af_sup_dir1")}
+              errorMessage={errors.af_sup_dir1?.message}
             />
             <InputContainer
               id={"upperMember_right_2"}
               labelText={"2"}
               inputType={"number"}
-              {...register("af_sup_dir")}
-              errorMessage={errors.af_sup_dir?.message}
+              {...register("af_sup_dir2")}
+              errorMessage={errors.af_sup_dir2?.message}
             />
             <InputContainer
               id={"upperMember_right_3"}
               labelText={"3"}
               inputType={"number"}
-              {...register("af_sup_dir")}
-              errorMessage={errors.af_sup_dir?.message}
+              {...register("af_sup_dir3")}
+              errorMessage={errors.af_sup_dir3?.message}
             />
           </FormField>
 
@@ -253,21 +253,21 @@ const EvaluationSheet = () => {
               labelText={"1"}
               inputType={"number"}
               {...register("af_sup_esq1")}
-              errorMessage={errors.af_sup_esq?.message}
+              errorMessage={errors.af_sup_esq1?.message}
             />
             <InputContainer
               id={"upperMember_left_2"}
               labelText={"2"}
               inputType={"number"}
               {...register("af_sup_esq2")}
-              errorMessage={errors.af_sup_esq?.message}
+              errorMessage={errors.af_sup_esq2?.message}
             />
             <InputContainer
               id={"upperMember_left_3"}
               labelText={"3"}
               inputType={"number"}
               {...register("af_sup_esq3")}
-              errorMessage={errors.af_sup_esq?.message}
+              errorMessage={errors.af_sup_esq3?.message}
             />
           </FormField>
         </ExamContainer>

@@ -133,15 +133,15 @@ const SociodemograficSheet = () => {
             options={[
               {
                 text: "Sim",
-                value: true,
+                value: "true",
               },
               {
                 text: "Não",
-                value: false,
+                value: "false",
               },
               {
                 text: "Não sabe",
-                value: undefined,
+                value: "NA",
               },
             ]}
           />
@@ -164,7 +164,7 @@ const SociodemograficSheet = () => {
               {
                 value: "pardo",
                 label: "Pardo",
-              },
+              }
             ]}
           />
 
@@ -270,15 +270,15 @@ const SociodemograficSheet = () => {
             errorMessage={errors.estudante?.message}
             options={[
               {
-                value: true,
+                value: "true",
                 label: "Sim",
               },
               {
-                value: false,
+                value: "false",
                 label: "Não",
               },
               {
-                value: undefined,
+                value: "NA",
                 label: "Não se aplica",
               },
             ]}
