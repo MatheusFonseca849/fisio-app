@@ -28,9 +28,7 @@ const EvaluationSheet = () => {
   };
   return (
     <>
-      <Header>
-        <h1>Ficha de Avaliação</h1>
-      </Header>
+      <Header>Ficha de Avaliação</Header>
       <StyledEvaluationSheet onSubmit={handleSubmit(submitForm)}>
         <EvaluationHeaderForm>
           <div className="headerForm_column">

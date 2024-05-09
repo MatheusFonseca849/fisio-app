@@ -97,12 +97,12 @@ export const evaluationSheetSchema = yup.object({
   bipodal_aberto_comentario2: yup.string().required(requiredMessage),
   bipodal_fechado_tempo1: yup
     .string()
-    .matches(/(\d){2}:(\d){2}/)
+    .matches(/(\d){2}:(\d){2}/, "Formato inválido")
     .required(requiredMessage),
   bipodal_fechado_comentario1: yup.string().required(requiredMessage),
   bipodal_fechado_tempo2: yup
     .string()
-    .matches(/(\d){2}:(\d){2}/, "Formato Inválido")
+    .matches(/(\d){2}:(\d){2}/, "Formato inválido")
     .required(requiredMessage),
   bipodal_fechado_comentario2: yup.string().required(requiredMessage),
   membro_preferencia: yup.string().required(requiredMessage),
@@ -203,7 +203,7 @@ export const evaluationSheetSchema = yup.object({
 });
 
 export const jointHealthSchema = yup.object({
-  numero_avaliacao: yup.number().required(requiredMessage),
+  numero_avaliacao: yup.number().typeError("Valor inválido").required(requiredMessage),
   data_avaliacao: yup
     .date()
     .typeError("Data inválida")
@@ -573,7 +573,7 @@ export const jointHealthSchema = yup.object({
     .number()
     .typeError("Valor inválido")
     .required(requiredMessage),
-  joe_esq_ext: yup
+  joe_esq_pe_ext: yup
     .number()
     .typeError("Valor inválido")
     .required(requiredMessage),

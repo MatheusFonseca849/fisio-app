@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 
 import StyledJointHealthSheet from "./jointHealthSheet.js";
 
-
 import EvaluationHeaderForm from "../../components/EvaluationHeaderForm/index.jsx";
 import ExamContainer from "../../components/ExamContainer/index.jsx";
 import FormField from "../../components/FormField/index.jsx";
@@ -15,16 +14,19 @@ import TextAreaInput from "../../components/TextAreaInput/index.jsx";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { jointHealthSchema } from "../../schemas/patientFormSchemas.js";
 
-
 const JointHealthPage = () => {
   const defaultExamContainerSize = "1.5rem";
   const defaultFormFieldSize = "1.375rem";
   const defaultFormSubfieldSize = "1.25rem";
   const defaultInputSize = "1rem";
 
-  const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: yupResolver(jointHealthSchema)
-  })
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(jointHealthSchema),
+  });
 
   const submitForm = (data) => {
     console.log(data);
@@ -32,9 +34,7 @@ const JointHealthPage = () => {
 
   return (
     <>
-      <Header>
-        <h1>Saúde articular na Hemofilia</h1>
-      </Header>
+      <Header>Saúde articular na Hemofilia</Header>
       <StyledJointHealthSheet
         title="Formulário de saúde articular"
         onSubmit={handleSubmit(submitForm)}

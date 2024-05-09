@@ -5,7 +5,7 @@ const StyledBurguer = styled.div`
   height: 1.5rem;
   z-index: 20;
   display: none;
-  position: absolute;
+  position: fixed;
   right: 18px;
 
   &:hover{

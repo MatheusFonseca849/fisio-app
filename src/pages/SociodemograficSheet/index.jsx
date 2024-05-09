@@ -10,9 +10,6 @@ import StyledSocioForm from "./sociodemograficSheet.js";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { socioFormSchema } from "../../schemas/patientFormSchemas.js";
 
-
-
-
 const SociodemograficSheet = () => {
   const defaultLabelSize = "16px";
   const defaultOptionSize = "16px";
@@ -32,9 +29,7 @@ const SociodemograficSheet = () => {
 
   return (
     <>
-      <Header>
-        <h1>Questionário Sociodemográfico</h1>
-      </Header>
+      <Header>Questionário Sociodemográfico</Header>
       <StyledSocioForm onSubmit={handleSubmit(submitForm)}>
         <EvaluationHeaderForm>
           <div className="headerForm_column">
@@ -164,7 +159,7 @@ const SociodemograficSheet = () => {
               {
                 value: "pardo",
                 label: "Pardo",
-              }
+              },
             ]}
           />
 

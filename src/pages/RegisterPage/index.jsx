@@ -8,7 +8,7 @@ const RegisterPage = () => {
     return(
 
         <>
-            <Header><h1>Cadastre-se</h1></Header>
+            <Header>Cadastre-se</Header>
             <RegisterForm/>
             <LoginRegisterFooter>
                 <h3>Já tem uma conta?</h3>
