@@ -15,7 +15,7 @@ const StyledRadioInputContainer = styled.div`
         `;
       } else {
         return css`
-          font-size: var(--font-size-3);
+          font-size: var(--font-size-4);
         `;
       }
     }};

@@ -10,9 +10,6 @@ import StyledSocioForm from "./sociodemograficSheet.js";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { socioFormSchema } from "../../schemas/patientFormSchemas.js";
 
-
-
-
 const SociodemograficSheet = () => {
   const defaultLabelSize = "16px";
   const defaultOptionSize = "16px";
@@ -32,9 +29,7 @@ const SociodemograficSheet = () => {
 
   return (
     <>
-      <Header>
-        <h1>Questionário Sociodemográfico</h1>
-      </Header>
+      <Header>Questionário Sociodemográfico</Header>
       <StyledSocioForm onSubmit={handleSubmit(submitForm)}>
         <EvaluationHeaderForm>
           <div className="headerForm_column">
@@ -133,15 +128,15 @@ const SociodemograficSheet = () => {
             options={[
               {
                 text: "Sim",
-                value: true,
+                value: "true",
               },
               {
                 text: "Não",
-                value: false,
+                value: "false",
               },
               {
                 text: "Não sabe",
-                value: undefined,
+                value: "NA",
               },
             ]}
           />
@@ -270,15 +265,15 @@ const SociodemograficSheet = () => {
             errorMessage={errors.estudante?.message}
             options={[
               {
-                value: true,
+                value: "true",
                 label: "Sim",
               },
               {
-                value: false,
+                value: "false",
                 label: "Não",
               },
               {
-                value: undefined,
+                value: "NA",
                 label: "Não se aplica",
               },
             ]}

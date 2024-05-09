@@ -32,7 +32,7 @@ const GlobalRoot = createGlobalStyle`
         --radius-form-container: 12px;
         --radius-btn: 4px;
 
-        --padding-header: 24px 12px;
+        --padding-header: 32px 22px;
         --padding-default-mobile: 8px;
         --padding-form-vertical: 16px 0;
         --padding-default: 16px;
@@ -43,6 +43,8 @@ const GlobalRoot = createGlobalStyle`
         --margin-main-mobile: 12px;
         --margin-main-desktop: 32px;
         --margin-header-bottom: 18px;
+        --margin-header-top: 128px;
+        --margin-header-top-desktop: 228px;
 
         --font-size-0: 1.75rem; /* 28px */
         --font-size-1: 1.625rem; /* 26px */
