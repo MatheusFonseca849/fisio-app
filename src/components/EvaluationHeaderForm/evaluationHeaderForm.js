@@ -18,11 +18,10 @@ const StyledEvaluationHeader = styled.div`
         div{
 
             display: flex;
-            align-items: center;
             gap: 8px;
             width: 100%;
 
-            label{
+            /* label{
         
                 font-size: var(--font-size-4);
                 font-weight: var(--font-weight-1);
@@ -37,7 +36,7 @@ const StyledEvaluationHeader = styled.div`
                 background-color: var(--color-grey-950);
                 width: 100%;
 
-            }
+            } */
 
         }
 

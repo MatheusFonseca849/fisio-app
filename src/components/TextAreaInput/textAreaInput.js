@@ -6,6 +6,7 @@ const StyledTextAreaInput = styled.div`
   gap: 8px;
   width: ${(props) => (props.inputType === "radio" ? "fit-content" : "100%")};
 
+
   label {
     ${({ $labelSize }) => {
       if ($labelSize) {
@@ -22,14 +23,40 @@ const StyledTextAreaInput = styled.div`
     color: var(--color-fixed-black);
   }
 
-  textarea {
-    width: 100%;
-    resize: none;
-    padding: var(--padding-small);
-    border-radius: var(--radius-default);
-    background-color: var(--color-grey-950);
-    border: var(--border-thickness-default) solid var(--color-grey-500);
+  div{
+
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+      width: 100%;
+      resize: none;
+      padding: var(--padding-small);
+      border-radius: var(--radius-default);
+      background-color: var(--color-grey-950);
+      border: var(--border-thickness-default) solid;
+      overflow-y: hidden;
+
+      ${({$error}) => {
+
+        if($error){
+          return css`
+            border-color: var(--color-error);
+          `
+        }else{
+          return css`
+            border-color: var(--color-grey-400);
+          `
+        }
+
+      }}
+    }
+
+    span{
+      color: var(--color-error);
+    }
   }
+
 `;
 
 export default StyledTextAreaInput;

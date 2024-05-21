@@ -3,12 +3,11 @@ import { styled, css } from "styled-components";
 const StyledRadioInputContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: var(--gap-default);
 
   h3 {
     ${({ $labelSize }) => {
-      // console.log($labelSize);
       if ($labelSize) {
         return css`
           font-size: ${(props) => props.$labelSize};
@@ -22,35 +21,45 @@ const StyledRadioInputContainer = styled.div`
 
     width: fit-content;
   }
+  div{
 
-  div {
     display: flex;
-    flex-direction: row;
-    gap: var(--gap-default);
+    flex-direction: column;
+    gap: 4px;
+
 
     div {
-      align-items: center;
-      gap: var(--gap-radio-input);
+      display: flex;
       flex-direction: row;
+      gap: var(--gap-default);
+  
+      div {
+        align-items: center;
+        gap: var(--gap-radio-input);
+        flex-direction: row;
+  
+        input[type="radio"] {
+          accent-color: var(--color-primary);
+          cursor: pointer;
+        }
+        label {
+          ${({ $optionSize }) => {
+            if ($optionSize) {
+              return css`
+                font-size: ${({ $optionSize }) => $optionSize};
+              `;
+            } else {
+              return css`
+                font-size: var(--font-size-4);
+              `;
+            }
+          }}
+        }
+      }
+    }
 
-      input[type="radio"] {
-        accent-color: var(--color-primary);
-        cursor: pointer;
-      }
-      label {
-        ${({ $optionSize }) => {
-          // console.log($optionSize);
-          if ($optionSize) {
-            return css`
-              font-size: ${({ $optionSize }) => $optionSize};
-            `;
-          } else {
-            return css`
-              font-size: var(--font-size-4);
-            `;
-          }
-        }}
-      }
+    span{
+      color: var(--color-error);
     }
   }
 `;

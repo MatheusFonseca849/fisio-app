@@ -1,13 +1,12 @@
 import { styled, css } from "styled-components";
 
 const StyledInputContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  width: fit-content;
 
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-    width: ${props => props.inputType === "radio" ? "fit-content" : "100%"};
-
-    label {
+  label {
     ${({ $labelSize }) => {
       if ($labelSize) {
         return css`
@@ -23,16 +22,34 @@ const StyledInputContainer = styled.div`
     color: var(--color-fixed-black);
   }
 
-    input{
+  div {
 
-        padding: var(--padding-small);
-        border: var(--border-thickness-default) solid var(--color-grey-500);
-        border-radius: var(--radius-default);
-        background-color: var(--color-grey-950);
+    display: flex;
+    flex-direction: column;
 
+    input {
+      border: var(--border-thickness-default) solid ;
+      ${({$error}) => {
+        if($error){
+          return css`
+            border-color: var(--color-error);
+          `
+        }else{
+          return css`
+            border-color: var(--color-grey-500);
+          `
+        }
+      }}
+      padding: var(--padding-small);
+      border-radius: var(--radius-default);
+      background-color: var(--color-grey-950);
+      width: 100%;
     }
-    
 
-`
+    span {
+      color: var(--color-error);
+    }
+  }
+`;
 
-export default StyledInputContainer
+export default StyledInputContainer;

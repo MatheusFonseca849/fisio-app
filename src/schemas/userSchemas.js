@@ -6,7 +6,7 @@ export const userRegisterSchema = yup.object({
   usuario_email: yup
     .string()
     .email("formato de email inválido")
-    .matches(/([a-z]|@|.)/, "Email contém caracteres inválidos")
+    .matches(/(\w)/, "Email contém caracteres inválidos")
     .required(requiredMessage),
 
   usuario_senha: yup

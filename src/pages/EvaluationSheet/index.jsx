@@ -9,19 +9,34 @@ import SubmitButton from "../../components/SubmitButton/index.jsx";
 import SelectInput from "../../components/SelectInput/index.jsx";
 import RadioInputContainer from "../../components/RadioInputContainer/index.jsx";
 import TextAreaInput from "../../components/TextAreaInput/index.jsx";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { evaluationSheetSchema } from "../../schemas/patientFormSchemas.js";
+import { mask } from "remask";
+import { useContext } from "react";
+import { FormContext } from "../../providers/FormContext.jsx";
 // import Chronometer from "../../components/Chronometer/index.jsx";
 
 const EvaluationSheet = () => {
+
+  const { evaluationSheetContext } = useContext(FormContext)
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(evaluationSheetSchema),
-  });
+    setValue,
+  } = evaluationSheetContext;
+
+  const formatTimeMask = (e) => {
+
+    const name = e.target.name
+    const value = e.target.value
+    console.log( name, value )
+
+    setValue(name, mask(value, "99:99"))
+  }
+
+  const addTimeMask = {
+    onChange: formatTimeMask,
+  }
 
   const submitForm = (data) => {
     console.log(data);
@@ -96,7 +111,7 @@ const EvaluationSheet = () => {
             <FormSubfield title={"1"}>
               <InputContainer
                 labelText={"Tempo:"}
-                {...register("bipodal_aberto_tempo1")}
+                {...register("bipodal_aberto_tempo1", addTimeMask)}
                 errorMessage={errors.bipodal_aberto_tempo1?.message}
               />
               <TextAreaInput
@@ -112,7 +127,7 @@ const EvaluationSheet = () => {
               <InputContainer
                 id={"bipodal_eyesOpen_time_2"}
                 labelText={"Tempo"}
-                {...register("bipodal_aberto_tempo2")}
+                {...register("bipodal_aberto_tempo2", addTimeMask)}
                 errorMessage={errors.bipodal_aberto_tempo2?.message}
               />
               <TextAreaInput
@@ -130,7 +145,7 @@ const EvaluationSheet = () => {
               <InputContainer
                 id={"bipodal_eyesClosed_time_1"}
                 labelText={"Tempo:"}
-                {...register("bipodal_fechado_tempo1")}
+                {...register("bipodal_fechado_tempo1", addTimeMask)}
                 errorMessage={errors.bipodal_fechado_tempo1?.message}
               />
               <TextAreaInput
@@ -146,7 +161,7 @@ const EvaluationSheet = () => {
               <InputContainer
                 id={"bipodal_eyesClosed_time_2"}
                 labelText={"Tempo"}
-                {...register("bipodal_fechado_tempo2")}
+                {...register("bipodal_fechado_tempo2", addTimeMask)}
                 errorMessage={errors.bipodal_fechado_tempo2?.message}
               />
               <TextAreaInput
@@ -188,8 +203,7 @@ const EvaluationSheet = () => {
               <InputContainer
                 id={"unipodal_time_1"}
                 labelText={"Tempo:"}
-                inputType={"time"}
-                {...register("unipodal_tempo1")}
+                {...register("unipodal_tempo1", addTimeMask)}
                 errorMessage={errors.unipodal_tempo1?.message}
               />
               <TextAreaInput
@@ -205,8 +219,8 @@ const EvaluationSheet = () => {
               <InputContainer
                 id={"unipodal_time_2"}
                 labelText={"Tempo:"}
-                inputType={"time"}
-                {...register("unipodal_tempo2")}
+                
+                {...register("unipodal_tempo2", addTimeMask)}
                 errorMessage={errors.unipodal_tempo2?.message}
               />
               <TextAreaInput

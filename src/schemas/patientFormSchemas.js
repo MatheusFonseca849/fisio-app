@@ -5,8 +5,8 @@ const requiredMessage = "Campo obrigatório";
 export const socioFormSchema = yup.object({
   nome_paciente: yup
     .string()
-    .matches(/(^[A-Za-z]+$)/, "Nome contém caracteres inválidos")
-    .required(requiredMessage),
+    .required(requiredMessage)
+    .matches(/^[\w\s]+$/, "Nome contém caracteres inválidos"),
   ID_paciente: yup
     .number()
     .typeError("Deve ser um número")
@@ -38,20 +38,20 @@ export const socioFormSchema = yup.object({
     .required(requiredMessage),
   filiacao_paciente: yup
     .string()
-    .matches(/(^[A-Za-z]+$)/, "Nome contém caracteres inválidos"),
+    .matches(/^[\w\s]+$/, "Nome contém caracteres inválidos"),
   tempo_diagnostico: yup
     .number()
     .typeError("Valor inválido")
     .required(requiredMessage),
   hemofilia_na_familia: yup
-    .string().matches(/(^[A-Za-z]+$)/, "Valor inválido").required(requiredMessage),
+    .string().matches(/(^[a-z]+$)/, "Valor inválido").required(requiredMessage),
   etnia: yup
     .string()
     .matches(/([a-z])/)
     .required(requiredMessage),
   estado_civil: yup.string().required(requiredMessage),
   escolaridade: yup.string().required(requiredMessage),
-  atividade_laboral: yup.string().required(requiredMessage),
+  atividade_laboral: yup.string().matches(/([a-zA-Z])/).required(requiredMessage),
   estudante: yup.string().matches(/([a-zA-Z]|)/, "Valor inválido").required(requiredMessage),
   plano_de_saude: yup.boolean().required(requiredMessage),
   auxilio_ou_aposentado: yup.boolean().required(requiredMessage),
@@ -75,7 +75,7 @@ export const evaluationSheetSchema = yup.object({
     .required(requiredMessage),
   nome_paciente: yup
     .string()
-    .matches(/(^[A-Za-z]+$)/, "Nome contém caracteres inválidos")
+    .matches(/(^[\w\s]+$)/, "Nome contém caracteres inválidos")
     .required(requiredMessage),
   angulo_popliteo: yup
     .number()
@@ -83,8 +83,8 @@ export const evaluationSheetSchema = yup.object({
     .required(requiredMessage),
   perimetria_tat: yup
     .number()
-    .typeError("Número inválido")
-    .required(requiredMessage),
+    .required(requiredMessage)
+    .typeError("Número inválido"),
   bipodal_aberto_tempo1: yup
     .string()
     .matches(/(\d){2}:(\d){2}/, "Formato invalido")
@@ -211,8 +211,8 @@ export const jointHealthSchema = yup.object({
   ID_paciente: yup.number().typeError("ID inválido").required(requiredMessage),
   nome_paciente: yup
     .string()
-    .matches(/(^[A-Za-z]+$)/, "Caractere inválido detectado")
-    .required(requiredMessage),
+    .required(requiredMessage)
+    .matches(/(^[\w\s]+$)/, "Caractere inválido detectado"),
   cot_esq_tipo_edema: yup
     .string()
     .matches(/(^[ a-z ]+$)/, "Valor inválido")

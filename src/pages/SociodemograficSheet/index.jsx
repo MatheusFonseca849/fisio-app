@@ -7,20 +7,22 @@ import RadioInputContainer from "../../components/RadioInputContainer";
 import SelectInput from "../../components/SelectInput";
 import SubmitButton from "../../components/SubmitButton";
 import StyledSocioForm from "./sociodemograficSheet.js";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { socioFormSchema } from "../../schemas/patientFormSchemas.js";
+import { useContext } from "react";
+import { FormContext } from "../../providers/FormContext.jsx";
 
 const SociodemograficSheet = () => {
   const defaultLabelSize = "16px";
   const defaultOptionSize = "16px";
 
+  const { sociodemoSheetContext } = useContext(FormContext)
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(socioFormSchema),
-  });
+  } = sociodemoSheetContext;
+
+ 
 
   const submitForm = (data) => {
     console.log(data);
@@ -243,16 +245,16 @@ const SociodemograficSheet = () => {
             errorMessage={errors.atividade_laboral?.message}
             options={[
               {
-                value: true,
+                value: "true",
                 label: "Sim",
               },
               {
-                value: false,
+                value: "false",
                 label: "Não",
               },
               {
-                value: undefined,
-                label: "Não se aplica",
+                value: "NA",
+                label: "N/A",
               },
             ]}
           />
