@@ -1,16 +1,13 @@
 import { styled, css } from "styled-components";
 
-const StyledSelectInput = styled.div`
+const StyledTextAreaInput = styled.div`
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: fit-content;
+  justify-content: space-between;
   gap: 8px;
+  width: ${(props) => (props.inputType === "radio" ? "fit-content" : "100%")};
+
 
   label {
-    font-weight: var(--font-weight-1);
-    color: var(--color-fixed-black);
-    
     ${({ $labelSize }) => {
       if ($labelSize) {
         return css`
@@ -22,37 +19,37 @@ const StyledSelectInput = styled.div`
         `;
       }
     }}
+    font-weight: var(--font-weight-1);
+    color: var(--color-fixed-black);
   }
 
   div{
 
     display: flex;
     flex-direction: column;
-    
-    select {
-      padding: var(--padding-small);
-      border: var(--border-thickness-default) solid;
-      border-radius: var(--radius-default);
+
+    textarea {
       width: 100%;
+      resize: none;
+      padding: var(--padding-small);
+      border-radius: var(--radius-default);
+      background-color: var(--color-grey-950);
+      border: var(--border-thickness-default) solid;
+      overflow-y: hidden;
 
       ${({$error}) => {
+
         if($error){
           return css`
             border-color: var(--color-error);
           `
         }else{
           return css`
-            border-color: var(--color-grey-500);
+            border-color: var(--color-grey-400);
           `
         }
-      }}
 
-      cursor: pointer;
-  
-      option {
-        background-color: var(--color-fixed-white);
-        color: var(--color-grey-100);
-      }
+      }}
     }
 
     span{
@@ -62,4 +59,4 @@ const StyledSelectInput = styled.div`
 
 `;
 
-export default StyledSelectInput;
+export default StyledTextAreaInput;

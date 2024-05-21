@@ -42,8 +42,9 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    min-width: 100vw;
+    height: fit-content;
+    min-height: 100dvh;
+    width: 100dvw;
 }
 
 button {

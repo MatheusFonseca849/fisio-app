@@ -8,6 +8,11 @@ const StyledSocioForm = styled.form`
   width: fit-content;
   max-width: 90%;
   padding: 16px 0;
+  margin-top: var(--margin-header-top);
+
+    @media(min-width: 768px){
+        margin-top: var(--margin-header-top-desktop);
+    }
 
   .headerForm_column{
 

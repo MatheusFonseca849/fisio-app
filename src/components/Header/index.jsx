@@ -1,11 +1,14 @@
+import Burguer from "../Burger/index.jsx";
 import StyledHeader from "./header.js";
 
-const Header = ({ children }) => {
+const Header = ({ children, titleSize }) => {
   return (
-    <StyledHeader>
-      {/* <img src="./src/images/logoAnhanguera.jpg" id="logoAnhanguera" alt="" /> */}
+    <StyledHeader $titleSize={titleSize && titleSize}>
+      <h1>
       {children}
-      {/* <img src="./src/images/lafupLogo.jpeg" id="logoLafup" alt="Lafup: Laboratório de avaliação funcional e performance motora humana" /> */}
+      </h1>
+      <Burguer/>
+      
     </StyledHeader>
   );
 };

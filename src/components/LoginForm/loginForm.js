@@ -8,7 +8,15 @@ const StyledLoginForm = styled.form`
     padding: 16px;
     min-width: 350px;
     width: fit-content;
+    gap: var(--gap-default);
     border-radius: var(--radius-form-container);
+    margin-top: 128px;
+
+    @media(min-width: 768px){
+        margin-top: var(--margin-header-top-desktop);
+    }
+
+
     
     div{
         
