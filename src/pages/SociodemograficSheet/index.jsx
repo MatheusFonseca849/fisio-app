@@ -7,23 +7,22 @@ import RadioInputContainer from "../../components/RadioInputContainer";
 import SelectInput from "../../components/SelectInput";
 import SubmitButton from "../../components/SubmitButton";
 import StyledSocioForm from "./sociodemograficSheet.js";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { socioFormSchema } from "../../schemas/patientFormSchemas.js";
-
-
-
+import { useContext } from "react";
+import { FormContext } from "../../providers/FormContext.jsx";
 
 const SociodemograficSheet = () => {
   const defaultLabelSize = "16px";
   const defaultOptionSize = "16px";
 
+  const { sociodemoSheetContext } = useContext(FormContext)
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(socioFormSchema),
-  });
+  } = sociodemoSheetContext;
+
+ 
 
   const submitForm = (data) => {
     console.log(data);
@@ -32,9 +31,7 @@ const SociodemograficSheet = () => {
 
   return (
     <>
-      <Header>
-        <h1>Questionário Sociodemográfico</h1>
-      </Header>
+      <Header>Questionário Sociodemográfico</Header>
       <StyledSocioForm onSubmit={handleSubmit(submitForm)}>
         <EvaluationHeaderForm>
           <div className="headerForm_column">
@@ -133,15 +130,15 @@ const SociodemograficSheet = () => {
             options={[
               {
                 text: "Sim",
-                value: true,
+                value: "true",
               },
               {
                 text: "Não",
-                value: false,
+                value: "false",
               },
               {
                 text: "Não sabe",
-                value: undefined,
+                value: "NA",
               },
             ]}
           />
@@ -248,16 +245,16 @@ const SociodemograficSheet = () => {
             errorMessage={errors.atividade_laboral?.message}
             options={[
               {
-                value: true,
+                value: "true",
                 label: "Sim",
               },
               {
-                value: false,
+                value: "false",
                 label: "Não",
               },
               {
-                value: undefined,
-                label: "Não se aplica",
+                value: "NA",
+                label: "N/A",
               },
             ]}
           />
@@ -270,15 +267,15 @@ const SociodemograficSheet = () => {
             errorMessage={errors.estudante?.message}
             options={[
               {
-                value: true,
+                value: "true",
                 label: "Sim",
               },
               {
-                value: false,
+                value: "false",
                 label: "Não",
               },
               {
-                value: undefined,
+                value: "NA",
                 label: "Não se aplica",
               },
             ]}

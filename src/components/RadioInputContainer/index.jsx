@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
 import StyledRadioInputContainer from "./radioInputContainer.js";
-import { useForm } from "react-hook-form";
 
 const RadioInputContainer = ({
   id,
@@ -15,8 +14,10 @@ const RadioInputContainer = ({
     <StyledRadioInputContainer
       $labelSize={labelSize && labelSize}
       $optionSize={optionSize && optionSize}
+      $error={errorMessage ? true : false}
     >
       <h3>{labelText}</h3>
+      <div>
       <div>
         {options.map((option) => (
           <div key={option.index} title={option.title && option.title}>
@@ -34,6 +35,7 @@ const RadioInputContainer = ({
         ))}
       </div>
       <span>{errorMessage}</span>
+      </div>
     </StyledRadioInputContainer>
   );
 };

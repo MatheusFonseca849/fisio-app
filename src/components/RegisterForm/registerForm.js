@@ -10,6 +10,11 @@ background-color: var(--color-grey-900);
     width: fit-content;
     max-width: 80%;
     border-radius: var(--radius-form-container);
+    margin-top: var(--margin-header-top);
+
+    @media(min-width: 768px){
+        margin-top: var(--margin-header-top-desktop);
+    }
     
     div{
         

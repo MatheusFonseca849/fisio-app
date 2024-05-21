@@ -11,7 +11,7 @@ import { userLoginSchema } from "../../schemas/userSchemas.js";
 
 const LoginForm = () => {
 
-  const {register, handleSubmit} = useForm({
+  const {register, handleSubmit, formState: { errors }} = useForm({
     resolver: yupResolver(userLoginSchema)
   })
 
@@ -27,6 +27,7 @@ const LoginForm = () => {
           placeholder={"Insira seu e-mail"}
           labelSize={"24px"}
           {...register("login")}
+          errorMessage={errors.login?.message}
         />
 
         <InputContainer
@@ -35,7 +36,8 @@ const LoginForm = () => {
           inputType={"password"}
           placeholder={"Insira sua senha"}
           labelSize={"24px"}
-          {...register("password")}
+          {...register("senha")}
+          errorMessage={errors.senha?.message}
         />
       </div>
 

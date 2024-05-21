@@ -8,7 +8,7 @@ const Burguer = () => {
     const {contextWorks} = useContext(FormContext)
 
     const [open, setOpen] = useState(false);
-    console.log(open)
+    // console.log(open)
     return(
         <>
         <StyledBurguer open={open} onClick={() => {

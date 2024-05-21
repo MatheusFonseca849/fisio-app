@@ -4,11 +4,13 @@ import { css, styled } from "styled-components";
 const StyledNavMenu = styled.ul`
   display: flex;
   align-items: center;
-  gap: var(--gap-nav-menu);
   justify-content: center;
+  gap: var(--gap-nav-menu);
   background-color: var(--color-grey-200);
-  margin-top: 16px;
-  
+  /* margin-top: 16px; */
+  width: fit-content;
+  position: fixed;
+  right: 0;
   li {
     color: var(--color-grey-950);
     padding: 18px 16px;
@@ -17,7 +19,7 @@ const StyledNavMenu = styled.ul`
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-start; */
+    justify-content: flex-start;
     position: fixed;
     
 
@@ -32,7 +34,7 @@ const StyledNavMenu = styled.ul`
         `;
       }
     }}
-    justify-content: center;
+   
     top: 0;
     right: 0;
     height: 100vh;

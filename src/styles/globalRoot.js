@@ -6,6 +6,7 @@ const GlobalRoot = createGlobalStyle`
 
         --color-primary: #FF4E1A;
         --color-secondary: #D8270040;
+        --color-error: #FF0D00;
         --color-fixed-white: #FEFEF9;
         --color-grey-950: #FAFAFA;
         --color-grey-900: #E9E9E9;
@@ -24,7 +25,7 @@ const GlobalRoot = createGlobalStyle`
         --gap-default: 16px;
         --gap-small: 8px;
         --gap-radio-input: 4px;
-        --gap-nav-menu: 28px;
+        --gap-nav-menu: 1.75rem;
 
         --border-thickness-default: 1px;
 
@@ -32,7 +33,7 @@ const GlobalRoot = createGlobalStyle`
         --radius-form-container: 12px;
         --radius-btn: 4px;
 
-        --padding-header: 24px 12px;
+        --padding-header: 28px 22px;
         --padding-default-mobile: 8px;
         --padding-form-vertical: 16px 0;
         --padding-default: 16px;
@@ -43,6 +44,8 @@ const GlobalRoot = createGlobalStyle`
         --margin-main-mobile: 12px;
         --margin-main-desktop: 32px;
         --margin-header-bottom: 18px;
+        --margin-header-top: 98px;
+        --margin-header-top-desktop: 228px;
 
         --font-size-0: 1.75rem; /* 28px */
         --font-size-1: 1.625rem; /* 26px */

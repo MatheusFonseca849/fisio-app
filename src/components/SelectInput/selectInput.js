@@ -24,18 +24,42 @@ const StyledSelectInput = styled.div`
     }}
   }
 
-  select {
-    padding: var(--padding-small);
-    border: var(--border-thickness-default) solid var(--color-grey-500);
-    border-radius: var(--radius-default);
-    width: 100%;
-    cursor: pointer;
+  div{
 
-    option {
-      background-color: var(--color-fixed-white);
-      color: var(--color-grey-100);
+    display: flex;
+    flex-direction: column;
+    
+    select {
+      padding: var(--padding-small);
+      border: var(--border-thickness-default) solid;
+      border-radius: var(--radius-default);
+      width: 100%;
+
+      ${({$error}) => {
+        if($error){
+          return css`
+            border-color: var(--color-error);
+          `
+        }else{
+          return css`
+            border-color: var(--color-grey-500);
+          `
+        }
+      }}
+
+      cursor: pointer;
+  
+      option {
+        background-color: var(--color-fixed-white);
+        color: var(--color-grey-100);
+      }
+    }
+
+    span{
+      color: var(--color-error);
     }
   }
+
 `;
 
 export default StyledSelectInput;
