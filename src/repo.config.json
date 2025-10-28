@@ -1,0 +1,13 @@
+{
+    "published": true,
+    "title": "fisio-app",
+    "info": "Small app with medical forms for phisiotherapy",
+    "publicUrl": "https://your-project-url.com",
+    "thumbnail": "./images/thumbnail.png",
+    "branch": "main",
+    "customConfig": {
+      "tags": ["react", "typescript"],
+      "featured": true,
+      "difficulty": "intermediate"
+    }
+  }
